@@ -15,6 +15,11 @@ import ueberUnsRoute from './routes/ueber-uns'
 
 // Import service subpages
 import { kuechenRoute } from './routes/leistungen/kuechen'
+import { badmoebelRoute } from './routes/leistungen/badmoebel'
+import { ladenbauRoute } from './routes/leistungen/ladenbau'
+import { gastronomieRoute } from './routes/leistungen/gastronomie'
+import { bueroRoute } from './routes/leistungen/buero'
+import { outdoorRoute } from './routes/leistungen/outdoor'
 
 // Import admin routes
 import authRoute from './routes/admin/auth'
@@ -47,6 +52,11 @@ app.route('/api', apiRoute)
 
 // Mount service subpages
 app.route('/leistungen/kuechen', kuechenRoute)
+app.route('/leistungen/badmoebel', badmoebelRoute)
+app.route('/leistungen/ladenbau', ladenbauRoute)
+app.route('/leistungen/gastronomie', gastronomieRoute)
+app.route('/leistungen/buero', bueroRoute)
+app.route('/leistungen/outdoor', outdoorRoute)
 
 // Mount admin routes
 app.route('/admin', adminDashboardRoute)
