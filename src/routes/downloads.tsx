@@ -1,499 +1,344 @@
 import { Hono } from 'hono'
+import { Layout } from '../components/Layout'
+import { createTranslator } from '../lib/i18n'
 
 export const downloadsRoute = new Hono()
 
-const downloads = [
-  {
-    id: 'kuechen-checkliste',
-    title: 'Küchen-Planungs-Checkliste',
-    description: '10 Schritte zur Traumküche - Von der Bestandsaufnahme bis zum perfekten Design',
-    category: 'Privatkunden',
-    pages: 10,
-    format: 'PDF',
-    size: '2.4 MB',
-    icon: 'fa-utensils',
-    highlights: [
-      'Raumanalyse & Maße',
-      'Stilfindung & Design',
-      'Material & Oberflächen',
-      'Geräteausstattung',
-      'Budget-Planung'
-    ]
-  },
-  {
-    id: 'bad-konfigurator',
-    title: 'Badmöbel-Konfigurator',
-    description: 'Ihr Weg zum perfekten Badezimmer - Schritt für Schritt zum Wellness-Traum',
-    category: 'Privatkunden',
-    pages: 12,
-    format: 'PDF',
-    size: '3.1 MB',
-    icon: 'fa-bath',
-    highlights: [
-      'Waschtisch-Konfiguration',
-      'Material-Auswahl',
-      'Beleuchtungskonzept',
-      'Stauraum-Planung',
-      'Barrierefreiheit'
-    ]
-  },
-  {
-    id: 'restaurant-guide',
-    title: 'Restaurant & Gastronomie Guide',
-    description: 'Professionelle Planung für Ihr Gastronomie-Projekt',
-    category: 'B2B',
-    pages: 25,
-    format: 'PDF',
-    size: '5.2 MB',
-    icon: 'fa-coffee',
-    highlights: [
-      'Raumkonzept & Zonierung',
-      'Küchen-Planung',
-      'Möblierung & Design',
-      'Compliance & Normen',
-      'Budget & Timeline'
-    ]
-  },
-  {
-    id: 'showroom-konzept',
-    title: 'Showroom & Retail Planer',
-    description: 'Markenräume die verkaufen - Von der Idee zum erfolgreichen Store',
-    category: 'B2B',
-    pages: 20,
-    format: 'PDF',
-    size: '4.8 MB',
-    icon: 'fa-store',
-    highlights: [
-      'Markenpositionierung',
-      'Customer Journey',
-      'Visual Merchandising',
-      'Beleuchtung & Technik',
-      'Rollout-Strategie'
-    ]
-  },
-  {
-    id: 'material-katalog',
-    title: 'Material & Oberflächen Katalog',
-    description: 'Umfassende Übersicht aller verfügbaren Materialien und Oberflächen',
-    category: 'Alle',
-    pages: 48,
-    format: 'PDF',
-    size: '12.3 MB',
-    icon: 'fa-swatchbook',
-    highlights: [
-      'Hölzer & Furniere',
-      'Arbeitsplatten',
-      'Beschläge & Hardware',
-      'Farben & Lackierungen',
-      'Pflegehinweise'
-    ]
-  },
-  {
-    id: 'nachhaltigkeit-report',
-    title: 'Nachhaltigkeit & Umwelt',
-    description: 'Unser Engagement für nachhaltige Produktion und umweltfreundliche Materialien',
-    category: 'Alle',
-    pages: 16,
-    format: 'PDF',
-    size: '3.5 MB',
-    icon: 'fa-leaf',
-    highlights: [
-      'FSC-Zertifizierung',
-      'Lokale Produktion',
-      'Recycling-Konzept',
-      'CO₂-Bilanz',
-      'Nachhaltige Materialien'
-    ]
-  }
-]
-
 downloadsRoute.get('/', (c) => {
+  const { lang, t } = createTranslator(c)
+  
+  const downloads = [
+    {
+      id: 'kitchen-guide',
+      title: lang === 'en' ? 'Kitchen Planning Guide' : 'Küchenplanungs-Guide',
+      description: lang === 'en' 
+        ? 'Everything you need to know for your dream kitchen'
+        : 'Alles was Sie für Ihre Traumküche wissen müssen',
+      fileSize: '2.4 MB',
+      format: 'PDF',
+      icon: 'fa-kitchen-set',
+      category: lang === 'en' ? 'Planning Guides' : 'Planungshilfen'
+    },
+    {
+      id: 'bathroom-checklist',
+      title: lang === 'en' ? 'Bathroom Checklist' : 'Bad-Checkliste',
+      description: lang === 'en'
+        ? 'Step-by-step to your wellness oasis'
+        : 'Schritt für Schritt zu Ihrer Wellness-Oase',
+      fileSize: '1.8 MB',
+      format: 'PDF',
+      icon: 'fa-bath',
+      category: lang === 'en' ? 'Planning Guides' : 'Planungshilfen'
+    },
+    {
+      id: 'material-catalog',
+      title: lang === 'en' ? 'Material Catalog 2024' : 'Materialkatalog 2024',
+      description: lang === 'en'
+        ? 'Our complete collection of surfaces and materials'
+        : 'Unsere komplette Kollektion an Oberflächen und Materialien',
+      fileSize: '15.3 MB',
+      format: 'PDF',
+      icon: 'fa-swatchbook',
+      category: lang === 'en' ? 'Catalogs' : 'Kataloge'
+    },
+    {
+      id: 'gastro-guide',
+      title: lang === 'en' ? 'Gastronomy Planning' : 'Gastronomie-Planung',
+      description: lang === 'en'
+        ? 'Professional guide for restaurant and café furnishing'
+        : 'Professioneller Leitfaden für Restaurant- und Café-Ausstattung',
+      fileSize: '3.2 MB',
+      format: 'PDF',
+      icon: 'fa-utensils',
+      category: lang === 'en' ? 'Professional' : 'Professional'
+    },
+    {
+      id: 'sustainability-report',
+      title: lang === 'en' ? 'Sustainability Report' : 'Nachhaltigkeitsbericht',
+      description: lang === 'en'
+        ? 'Our commitment to environment and future'
+        : 'Unser Engagement für Umwelt und Zukunft',
+      fileSize: '1.1 MB',
+      format: 'PDF',
+      icon: 'fa-leaf',
+      category: lang === 'en' ? 'Company' : 'Unternehmen'
+    },
+    {
+      id: 'price-list',
+      title: lang === 'en' ? 'Price Guide 2024' : 'Preisübersicht 2024',
+      description: lang === 'en'
+        ? 'Transparent pricing information for all services'
+        : 'Transparente Preisinformationen für alle Leistungen',
+      fileSize: '800 KB',
+      format: 'PDF',
+      icon: 'fa-euro-sign',
+      category: lang === 'en' ? 'Pricing' : 'Preise'
+    }
+  ]
+
   return c.render(
     <>
       {/* Hero Section */}
-      <section class="bg-gradient-to-br from-brand-anthrazit to-gray-800 py-20 text-white">
-        <div class="container mx-auto px-4">
-          <h1 class="text-5xl font-display mb-4">Download-Center</h1>
-          <p class="text-xl text-gray-300 max-w-2xl">
-            Kostenlose Planungshilfen, Checklisten und Kataloge für Ihr Projekt. 
-            Perfekt vorbereitet zum Erfolg.
+      <section class="relative h-64 bg-gradient-to-br from-brand-anthrazit to-gray-800 flex items-center justify-center">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="relative z-10 text-center text-white">
+          <h1 class="font-display text-4xl md:text-6xl mb-4">{t('nav.downloads')}</h1>
+          <p class="text-xl opacity-90">
+            {lang === 'en'
+              ? 'Helpful resources for your project'
+              : 'Hilfreiche Ressourcen für Ihr Projekt'}
           </p>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section class="py-12 bg-brand-greige">
-        <div class="container mx-auto px-4">
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div class="flex items-center">
-              <i class="fas fa-download text-brand-brass text-2xl mr-4"></i>
-              <div>
-                <p class="font-semibold text-brand-anthrazit">Sofort verfügbar</p>
-                <p class="text-sm text-gray-600">Nach Registrierung</p>
-              </div>
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-file-pdf text-brand-brass text-2xl mr-4"></i>
-              <div>
-                <p class="font-semibold text-brand-anthrazit">PDF-Format</p>
-                <p class="text-sm text-gray-600">Optimal zum Drucken</p>
-              </div>
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-euro-sign text-brand-brass text-2xl mr-4"></i>
-              <div>
-                <p class="font-semibold text-brand-anthrazit">100% Kostenlos</p>
-                <p class="text-sm text-gray-600">Keine versteckten Kosten</p>
-              </div>
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-shield-alt text-brand-brass text-2xl mr-4"></i>
-              <div>
-                <p class="font-semibold text-brand-anthrazit">Datenschutz</p>
-                <p class="text-sm text-gray-600">DSGVO-konform</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Downloads Grid */}
-      <section class="py-16">
-        <div class="container mx-auto px-4">
-          {/* Filter Tabs */}
-          <div class="flex flex-wrap gap-2 mb-12 justify-center">
-            <button class="download-tab active" data-category="all">
-              Alle Downloads
-            </button>
-            <button class="download-tab" data-category="privatkunden">
-              Privatkunden
-            </button>
-            <button class="download-tab" data-category="b2b">
-              B2B & Business
-            </button>
-            <button class="download-tab" data-category="alle">
-              Allgemein
-            </button>
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="font-display text-3xl mb-4">
+              {lang === 'en'
+                ? 'Free Downloads'
+                : 'Kostenlose Downloads'}
+            </h2>
+            <p class="text-xl text-gray-600">
+              {lang === 'en'
+                ? 'Get valuable information and planning aids for your project.'
+                : 'Erhalten Sie wertvolle Informationen und Planungshilfen für Ihr Projekt.'}
+            </p>
           </div>
 
-          {/* Downloads Grid */}
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {downloads.map((download) => (
-              <div class="download-card bg-white rounded-lg shadow-lg overflow-hidden" data-category={download.category.toLowerCase()}>
-                {/* Card Header */}
-                <div class="bg-gradient-to-r from-brand-brass to-brand-oak p-6 text-white">
-                  <div class="flex items-center justify-between mb-4">
-                    <i class={`fas ${download.icon} text-4xl`}></i>
-                    <span class="bg-white/20 px-3 py-1 rounded-full text-sm">
-                      {download.category}
-                    </span>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {downloads.map(download => (
+              <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div class="flex items-start mb-4">
+                  <div class="w-12 h-12 bg-brand-brass rounded-lg flex items-center justify-center text-white mr-4">
+                    <i class={`fas ${download.icon}`}></i>
                   </div>
-                  <h3 class="text-xl font-bold mb-2">{download.title}</h3>
-                  <p class="text-sm opacity-90">{download.description}</p>
+                  <div class="flex-1">
+                    <h3 class="font-bold text-lg mb-1">{download.title}</h3>
+                    <p class="text-sm text-gray-500">{download.category}</p>
+                  </div>
                 </div>
-
-                {/* Card Body */}
-                <div class="p-6">
-                  {/* Highlights */}
-                  <div class="mb-6">
-                    <h4 class="font-semibold text-brand-anthrazit mb-3">Inhalt:</h4>
-                    <ul class="space-y-2">
-                      {download.highlights.map((highlight) => (
-                        <li class="flex items-start text-sm text-gray-600">
-                          <i class="fas fa-check text-brand-brass mr-2 mt-0.5"></i>
-                          <span>{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Meta Info */}
-                  <div class="flex items-center justify-between text-sm text-gray-500 border-t pt-4 mb-6">
-                    <span>
-                      <i class="fas fa-file mr-1"></i>
-                      {download.pages} Seiten
-                    </span>
-                    <span>
-                      <i class="fas fa-database mr-1"></i>
-                      {download.size}
-                    </span>
-                    <span>
-                      <i class="fas fa-file-pdf mr-1"></i>
-                      {download.format}
-                    </span>
-                  </div>
-
-                  {/* Download Button */}
-                  <button 
-                    class="w-full btn-primary download-trigger" 
-                    data-download={download.id}
-                    data-title={download.title}
-                  >
-                    <i class="fas fa-download mr-2"></i>
-                    Jetzt herunterladen
-                  </button>
+                
+                <p class="text-gray-600 mb-4">{download.description}</p>
+                
+                <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                  <span><i class="fas fa-file-pdf mr-1"></i> {download.format}</span>
+                  <span><i class="fas fa-download mr-1"></i> {download.fileSize}</span>
                 </div>
+                
+                <button 
+                  class="download-btn w-full bg-brand-anthrazit text-white py-3 rounded-lg hover:bg-brand-brass transition-colors"
+                  data-download={download.id}
+                  data-title={download.title}
+                >
+                  <i class="fas fa-download mr-2"></i>
+                  {t('action.download')}
+                </button>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How it Works */}
-      <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-display text-brand-anthrazit text-center mb-12">
-            So funktioniert's
-          </h2>
-
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div class="text-center">
-              <div class="w-20 h-20 bg-brand-brass rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-4">
-                <i class="fas fa-mouse-pointer"></i>
-              </div>
-              <h3 class="font-semibold text-brand-anthrazit mb-2">1. Auswählen</h3>
-              <p class="text-sm text-gray-600">Wählen Sie die gewünschten Downloads aus</p>
+      {/* Newsletter Section */}
+      <section class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4">
+          <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+            <div class="text-center mb-8">
+              <i class="fas fa-envelope text-5xl text-brand-brass mb-4"></i>
+              <h2 class="font-display text-3xl mb-4">
+                {lang === 'en'
+                  ? 'Stay Updated'
+                  : 'Bleiben Sie informiert'}
+              </h2>
+              <p class="text-xl text-gray-600">
+                {lang === 'en'
+                  ? 'Subscribe to our newsletter and receive exclusive insights and offers.'
+                  : 'Abonnieren Sie unseren Newsletter und erhalten Sie exklusive Einblicke und Angebote.'}
+              </p>
             </div>
-
-            <div class="text-center">
-              <div class="w-20 h-20 bg-brand-brass rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-4">
-                <i class="fas fa-user-edit"></i>
-              </div>
-              <h3 class="font-semibold text-brand-anthrazit mb-2">2. Registrieren</h3>
-              <p class="text-sm text-gray-600">Kurze Registrierung mit E-Mail</p>
-            </div>
-
-            <div class="text-center">
-              <div class="w-20 h-20 bg-brand-brass rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-4">
-                <i class="fas fa-envelope-open"></i>
-              </div>
-              <h3 class="font-semibold text-brand-anthrazit mb-2">3. Erhalten</h3>
-              <p class="text-sm text-gray-600">Download-Link per E-Mail</p>
-            </div>
-
-            <div class="text-center">
-              <div class="w-20 h-20 bg-brand-brass rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-4">
-                <i class="fas fa-clipboard-check"></i>
-              </div>
-              <h3 class="font-semibold text-brand-anthrazit mb-2">4. Durchstarten</h3>
-              <p class="text-sm text-gray-600">Mit der Planung beginnen</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Newsletter CTA */}
-      <section class="py-16 bg-gradient-to-r from-brand-brass to-brand-oak text-white">
-        <div class="container mx-auto px-4">
-          <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl font-display mb-4">
-              Bleiben Sie auf dem Laufenden
-            </h2>
-            <p class="text-xl mb-8">
-              Erhalten Sie exklusive Einblicke, neue Downloads und Projekt-Inspirationen 
-              direkt in Ihr Postfach.
-            </p>
             
-            <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input 
-                type="email" 
-                placeholder="Ihre E-Mail-Adresse" 
-                class="flex-1 px-4 py-3 rounded-lg text-gray-800"
-                required
-              />
-              <button type="submit" class="btn-white-large">
-                <i class="fas fa-paper-plane mr-2"></i>
-                Anmelden
-              </button>
+            <form action={`/api/newsletter?lang=${lang}`} method="POST" class="max-w-md mx-auto">
+              <div class="flex gap-4">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder={lang === 'en' ? 'Your email address' : 'Ihre E-Mail-Adresse'}
+                  required
+                  class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent"
+                />
+                <button
+                  type="submit"
+                  class="bg-brand-brass text-white px-6 py-3 rounded-lg hover:bg-brand-oak transition-colors"
+                >
+                  {t('action.subscribe')}
+                </button>
+              </div>
             </form>
-            
-            <p class="text-sm mt-4 opacity-90">
-              Kostenlos und jederzeit kündbar. Kein Spam, versprochen.
-            </p>
           </div>
         </div>
       </section>
 
       {/* Download Modal */}
-      <div id="download-modal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
-        <div class="bg-white rounded-lg max-w-md w-full mx-4">
-          <div class="p-6 border-b">
-            <h3 class="text-2xl font-display text-brand-anthrazit" id="modal-title">
-              Download anfordern
-            </h3>
-          </div>
+      <div id="downloadModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4">
+          <h3 class="text-2xl font-bold mb-4">
+            {lang === 'en'
+              ? 'One more step...'
+              : 'Noch ein Schritt...'}
+          </h3>
+          <p class="text-gray-600 mb-6">
+            {lang === 'en'
+              ? 'Please provide your contact information to download:'
+              : 'Bitte geben Sie Ihre Kontaktdaten für den Download an:'}
+          </p>
+          <p class="font-semibold mb-6" id="downloadTitle"></p>
           
-          <form id="download-form" class="p-6">
-            <input type="hidden" id="download-id" name="file" />
+          <form action={`/api/download?lang=${lang}`} method="POST" id="downloadForm">
+            <input type="hidden" name="resource" id="downloadResource" />
             
             <div class="space-y-4">
               <div>
-                <label class="form-label">Vorname *</label>
-                <input type="text" name="firstname" class="form-input" required />
+                <label class="block text-sm font-medium text-gray-700 mb-1">
+                  {t('contact.form.name')} *
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent"
+                />
               </div>
               
               <div>
-                <label class="form-label">Nachname *</label>
-                <input type="text" name="lastname" class="form-input" required />
+                <label class="block text-sm font-medium text-gray-700 mb-1">
+                  {t('contact.form.email')} *
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent"
+                />
               </div>
               
               <div>
-                <label class="form-label">E-Mail *</label>
-                <input type="email" name="email" class="form-input" required />
-              </div>
-              
-              <div>
-                <label class="form-label">Firma (optional)</label>
-                <input type="text" name="company" class="form-input" />
-              </div>
-              
-              <div>
-                <label class="form-label">Ich bin...</label>
-                <select name="type" class="form-input">
-                  <option value="privat">Privatkunde</option>
-                  <option value="architekt">Architekt/Planer</option>
-                  <option value="unternehmer">Unternehmer</option>
-                  <option value="handwerker">Handwerker</option>
-                  <option value="sonstiges">Sonstiges</option>
-                </select>
+                <label class="block text-sm font-medium text-gray-700 mb-1">
+                  {t('contact.form.company')}
+                </label>
+                <input
+                  type="text"
+                  name="company"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent"
+                />
               </div>
               
               <div class="flex items-start">
-                <input type="checkbox" name="newsletter" id="download-newsletter" class="mt-1 mr-3" checked />
-                <label for="download-newsletter" class="text-sm text-gray-600">
-                  Ja, ich möchte weitere hilfreiche Tipps und Neuigkeiten per E-Mail erhalten.
+                <input
+                  type="checkbox"
+                  name="newsletter"
+                  id="newsletterConsent"
+                  class="mt-1 h-4 w-4 text-brand-brass border-gray-300 rounded focus:ring-brand-brass"
+                />
+                <label for="newsletterConsent" class="ml-2 text-sm text-gray-600">
+                  {lang === 'en'
+                    ? 'Yes, I would like to receive the newsletter'
+                    : 'Ja, ich möchte den Newsletter erhalten'}
                 </label>
               </div>
               
               <div class="flex items-start">
-                <input type="checkbox" name="privacy" id="download-privacy" class="mt-1 mr-3" required />
-                <label for="download-privacy" class="text-sm text-gray-600">
-                  Ich akzeptiere die <a href="/datenschutz" class="text-brand-brass hover:underline">Datenschutzerklärung</a> *
+                <input
+                  type="checkbox"
+                  name="privacy"
+                  required
+                  class="mt-1 h-4 w-4 text-brand-brass border-gray-300 rounded focus:ring-brand-brass"
+                />
+                <label class="ml-2 text-sm text-gray-600">
+                  {t('contact.form.privacy')} *
                 </label>
               </div>
             </div>
             
             <div class="flex gap-4 mt-6">
-              <button type="submit" class="btn-primary flex-1">
-                <i class="fas fa-download mr-2"></i>
-                Download starten
+              <button
+                type="button"
+                id="cancelDownload"
+                class="flex-1 bg-gray-200 text-gray-700 py-3 rounded-lg hover:bg-gray-300 transition-colors"
+              >
+                {lang === 'en' ? 'Cancel' : 'Abbrechen'}
               </button>
-              <button type="button" id="modal-close" class="btn-secondary">
-                Abbrechen
+              <button
+                type="submit"
+                class="flex-1 bg-brand-brass text-white py-3 rounded-lg hover:bg-brand-oak transition-colors"
+              >
+                <i class="fas fa-download mr-2"></i>
+                {t('action.download')}
               </button>
             </div>
           </form>
         </div>
       </div>
 
-      {/* Custom Styles */}
-      <style dangerouslySetInnerHTML={{__html: `
-        .download-tab {
-          @apply px-6 py-2 rounded-full border-2 border-gray-300 bg-white text-gray-700 hover:bg-brand-brass hover:text-white hover:border-brand-brass transition-all font-semibold;
-        }
-        .download-tab.active {
-          @apply bg-brand-brass text-white border-brand-brass;
-        }
-        .download-card {
-          @apply transition-all duration-300;
-        }
-        .download-card.hidden {
-          @apply hidden;
-        }
-      `}} />
-
-      {/* Download Scripts */}
+      {/* Download Modal Script */}
       <script dangerouslySetInnerHTML={{__html: `
         document.addEventListener('DOMContentLoaded', function() {
-          // Tab filtering
-          const tabs = document.querySelectorAll('.download-tab');
-          const cards = document.querySelectorAll('.download-card');
-          
-          tabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-              tabs.forEach(t => t.classList.remove('active'));
-              this.classList.add('active');
-              
-              const category = this.dataset.category;
-              
-              cards.forEach(card => {
-                if (category === 'all' || card.dataset.category === category) {
-                  card.classList.remove('hidden');
-                } else {
-                  card.classList.add('hidden');
-                }
-              });
-            });
-          });
+          const modal = document.getElementById('downloadModal');
+          const downloadBtns = document.querySelectorAll('.download-btn');
+          const cancelBtn = document.getElementById('cancelDownload');
+          const downloadTitle = document.getElementById('downloadTitle');
+          const downloadResource = document.getElementById('downloadResource');
+          const downloadForm = document.getElementById('downloadForm');
 
-          // Download modal
-          const modal = document.getElementById('download-modal');
-          const modalTitle = document.getElementById('modal-title');
-          const downloadId = document.getElementById('download-id');
-          const modalClose = document.getElementById('modal-close');
-          const downloadTriggers = document.querySelectorAll('.download-trigger');
-          const downloadForm = document.getElementById('download-form');
-
-          downloadTriggers.forEach(trigger => {
-            trigger.addEventListener('click', function() {
-              const id = this.dataset.download;
+          downloadBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+              const resource = this.dataset.download;
               const title = this.dataset.title;
               
-              downloadId.value = id;
-              modalTitle.textContent = title;
+              downloadTitle.textContent = title;
+              downloadResource.value = resource;
+              
               modal.classList.remove('hidden');
+              modal.classList.add('flex');
             });
           });
 
-          modalClose.addEventListener('click', function() {
+          cancelBtn.addEventListener('click', function() {
             modal.classList.add('hidden');
+            modal.classList.remove('flex');
           });
 
           modal.addEventListener('click', function(e) {
             if (e.target === modal) {
               modal.classList.add('hidden');
+              modal.classList.remove('flex');
             }
           });
 
-          downloadForm.addEventListener('submit', async function(e) {
+          downloadForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const formData = new FormData(downloadForm);
-            const data = {
-              file: formData.get('file'),
-              email: formData.get('email'),
-              name: formData.get('firstname') + ' ' + formData.get('lastname')
-            };
+            // Simulate download
+            alert('Download wird gestartet... (In Produktion würde hier die echte Datei heruntergeladen)');
             
-            try {
-              const response = await fetch('/api/download', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-              });
-              
-              const result = await response.json();
-              if (result.success) {
-                alert('Vielen Dank! Der Download-Link wurde an Ihre E-Mail-Adresse gesendet.');
-                modal.classList.add('hidden');
-                downloadForm.reset();
-                
-                // Simulate download
-                window.open(result.downloadUrl, '_blank');
-              }
-            } catch (error) {
-              console.error('Error:', error);
-              alert('Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.');
-            }
+            // Close modal
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            
+            // Reset form
+            downloadForm.reset();
           });
         });
       `}} />
     </>,
     { 
-      title: 'Download-Center | Brandstifter Urban Manufactur',
-      description: 'Kostenlose Planungshilfen, Checklisten und Kataloge. Küchen-Planer, Bad-Konfigurator, Restaurant-Guide und mehr zum Download.'
+      title: lang === 'en'
+        ? 'Downloads | Brandstifter Urban Manufactur'
+        : 'Downloads | Brandstifter Urban Manufactur',
+      description: lang === 'en'
+        ? 'Download free planning guides, catalogs, and resources for your project.'
+        : 'Laden Sie kostenlose Planungshilfen, Kataloge und Ressourcen für Ihr Projekt herunter.'
     }
   )
 })

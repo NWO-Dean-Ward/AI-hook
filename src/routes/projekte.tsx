@@ -1,427 +1,302 @@
 import { Hono } from 'hono'
+import { Layout } from '../components/Layout'
+import { createTranslator } from '../lib/i18n'
 
 export const projekteRoute = new Hono()
 
-// Dummy project data (would come from database in production)
-const projects = [
-  {
-    id: 1,
-    title: 'Penthouse Küche Frankfurt',
-    category: 'kueche',
-    client: 'Privat',
-    year: 2024,
-    description: 'Luxuriöse Küche mit Skyline-Blick',
-    features: ['Naturstein-Arbeitsplatte', 'Integrierte Beleuchtung', 'Maßgefertigte Schränke'],
-    budget: '100.000+',
-    duration: '8 Wochen'
-  },
-  {
-    id: 2,
-    title: 'Restaurant "Zum Goldenen Hirsch"',
-    category: 'gastronomie',
-    client: 'B2B',
-    year: 2024,
-    description: 'Komplette Gastronomie-Einrichtung für 120 Plätze',
-    features: ['Offene Küche', 'Bar-Bereich', 'Terrassen-Möblierung'],
-    budget: '250.000+',
-    duration: '12 Wochen'
-  },
-  {
-    id: 3,
-    title: 'Wellness-Bad Taunus Villa',
-    category: 'bad',
-    client: 'Privat',
-    year: 2023,
-    description: 'Spa-inspiriertes Master-Badezimmer',
-    features: ['Freistehende Badewanne', 'Regendusche', 'Doppelwaschtisch'],
-    budget: '50.000-100.000',
-    duration: '6 Wochen'
-  },
-  {
-    id: 4,
-    title: 'Tech-Startup Office Frankfurt',
-    category: 'buero',
-    client: 'B2B',
-    year: 2024,
-    description: 'Modernes Büro für 50 Mitarbeiter',
-    features: ['Flexible Workspaces', 'Meeting-Pods', 'Küchen-Lounge'],
-    budget: '150.000+',
-    duration: '10 Wochen'
-  },
-  {
-    id: 5,
-    title: 'Fashion Boutique Wiesbaden',
-    category: 'ladenbau',
-    client: 'B2B',
-    year: 2023,
-    description: 'Premium Fashion Store auf 200m²',
-    features: ['Flexible Display-Systeme', 'VIP-Bereich', 'Maßgefertigte Umkleiden'],
-    budget: '100.000-150.000',
-    duration: '8 Wochen'
-  },
-  {
-    id: 6,
-    title: 'Outdoor-Küche Kronberg',
-    category: 'outdoor',
-    client: 'Privat',
-    year: 2024,
-    description: 'Luxuriöse Terrassen-Küche mit Pool-Bar',
-    features: ['Wetterfeste Materialien', 'BBQ-Station', 'Kühlsysteme'],
-    budget: '50.000-100.000',
-    duration: '6 Wochen'
-  },
-  {
-    id: 7,
-    title: 'Landhausküche Bad Homburg',
-    category: 'kueche',
-    client: 'Privat',
-    year: 2023,
-    description: 'Moderne Interpretation des Landhaus-Stils',
-    features: ['Kochinsel', 'Weinkühlschrank', 'Pantry'],
-    budget: '50.000-100.000',
-    duration: '7 Wochen'
-  },
-  {
-    id: 8,
-    title: 'Café & Bäckerei Friedberg',
-    category: 'gastronomie',
-    client: 'B2B',
-    year: 2024,
-    description: 'Gemütliches Café mit Bäckerei-Verkauf',
-    features: ['Theke mit Vitrine', 'Sitzbereich', 'To-Go Station'],
-    budget: '75.000',
-    duration: '5 Wochen'
-  }
-]
-
 projekteRoute.get('/', (c) => {
+  const { lang, t } = createTranslator(c)
+  
+  // Sample projects data
+  const projects = [
+    {
+      id: 1,
+      title: lang === 'en' ? 'Modern Kitchen Villa Weber' : 'Moderne Küche Villa Weber',
+      category: 'kuechen',
+      year: 2023,
+      client: 'privat',
+      image: '/api/placeholder/600/400',
+      description: lang === 'en' 
+        ? 'Complete kitchen renovation with high-end appliances'
+        : 'Komplette Küchensanierung mit High-End-Geräten'
+    },
+    {
+      id: 2,
+      title: lang === 'en' ? 'Restaurant Golden Deer' : 'Restaurant Goldener Hirsch',
+      category: 'gastronomie',
+      year: 2023,
+      client: 'b2b',
+      image: '/api/placeholder/600/400',
+      description: lang === 'en'
+        ? 'Complete gastronomy furnishing for 120 seats'
+        : 'Komplettausstattung Gastronomie für 120 Plätze'
+    },
+    {
+      id: 3,
+      title: lang === 'en' ? 'Boutique Fashion & More' : 'Boutique Fashion & More',
+      category: 'ladenbau',
+      year: 2023,
+      client: 'b2b',
+      image: '/api/placeholder/600/400',
+      description: lang === 'en'
+        ? 'Shop fitting on 200m² with lighting concept'
+        : 'Ladenbau auf 200m² mit Lichtkonzept'
+    },
+    {
+      id: 4,
+      title: lang === 'en' ? 'Wellness Bathroom Private Spa' : 'Wellness-Bad Private Spa',
+      category: 'badmoebel',
+      year: 2022,
+      client: 'privat',
+      image: '/api/placeholder/600/400',
+      description: lang === 'en'
+        ? 'Luxury bathroom with sauna integration'
+        : 'Luxusbad mit Sauna-Integration'
+    },
+    {
+      id: 5,
+      title: lang === 'en' ? 'Start-up Office TechHub' : 'Start-up Büro TechHub',
+      category: 'buero',
+      year: 2022,
+      client: 'b2b',
+      image: '/api/placeholder/600/400',
+      description: lang === 'en'
+        ? 'Modern office concept for 50 workstations'
+        : 'Modernes Office-Konzept für 50 Arbeitsplätze'
+    },
+    {
+      id: 6,
+      title: lang === 'en' ? 'Rooftop Terrace Penthouse' : 'Dachterrasse Penthouse',
+      category: 'outdoor',
+      year: 2022,
+      client: 'privat',
+      image: '/api/placeholder/600/400',
+      description: lang === 'en'
+        ? 'Outdoor kitchen with lounge area'
+        : 'Outdoor-Küche mit Lounge-Bereich'
+    },
+    {
+      id: 7,
+      title: lang === 'en' ? 'Hotel Frankfurt City' : 'Hotel Frankfurt City',
+      category: 'gastronomie',
+      year: 2021,
+      client: 'b2b',
+      image: '/api/placeholder/600/400',
+      description: lang === 'en'
+        ? 'Lobby bar and breakfast area'
+        : 'Lobby-Bar und Frühstücksbereich'
+    },
+    {
+      id: 8,
+      title: lang === 'en' ? 'Country House Kitchen' : 'Landhausküche Familie Schmidt',
+      category: 'kuechen',
+      year: 2021,
+      client: 'privat',
+      image: '/api/placeholder/600/400',
+      description: lang === 'en'
+        ? 'Traditional kitchen with modern technology'
+        : 'Traditionelle Küche mit moderner Technik'
+    }
+  ]
+
   return c.render(
     <>
       {/* Hero Section */}
-      <section class="bg-gradient-to-br from-brand-anthrazit to-gray-800 py-20 text-white">
-        <div class="container mx-auto px-4">
-          <h1 class="text-5xl font-display mb-4">Unsere Projekte</h1>
-          <p class="text-xl text-gray-300 max-w-2xl">
-            Entdecken Sie unsere realisierten Projekte und lassen Sie sich 
-            von der Vielfalt und Qualität unserer Arbeit inspirieren.
-          </p>
+      <section class="relative h-64 bg-gradient-to-br from-brand-anthrazit to-gray-800 flex items-center justify-center">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="relative z-10 text-center text-white">
+          <h1 class="font-display text-4xl md:text-6xl mb-4">{t('projects.title')}</h1>
+          <p class="text-xl opacity-90">{t('projects.subtitle')}</p>
         </div>
       </section>
 
       {/* Filter Section */}
-      <section class="py-8 bg-gray-50 sticky top-20 z-40">
-        <div class="container mx-auto px-4">
-          <div class="flex flex-wrap gap-4 items-center">
-            <span class="font-semibold text-gray-700">Filter:</span>
-            
-            {/* Category Filter */}
-            <div class="flex flex-wrap gap-2">
-              <button class="filter-btn active" data-filter="all">
-                Alle Projekte
-              </button>
-              <button class="filter-btn" data-filter="kueche">
-                <i class="fas fa-utensils mr-1"></i> Küchen
-              </button>
-              <button class="filter-btn" data-filter="bad">
-                <i class="fas fa-bath mr-1"></i> Badmöbel
-              </button>
-              <button class="filter-btn" data-filter="ladenbau">
-                <i class="fas fa-store mr-1"></i> Ladenbau
-              </button>
-              <button class="filter-btn" data-filter="gastronomie">
-                <i class="fas fa-coffee mr-1"></i> Gastronomie
-              </button>
-              <button class="filter-btn" data-filter="buero">
-                <i class="fas fa-briefcase mr-1"></i> Büros
-              </button>
-              <button class="filter-btn" data-filter="outdoor">
-                <i class="fas fa-tree mr-1"></i> Outdoor
-              </button>
+      <section class="py-8 bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="flex flex-wrap gap-4 items-center justify-center">
+            <div class="flex items-center gap-2">
+              <label class="text-sm font-medium text-gray-700">{t('projects.filter.category')}:</label>
+              <select id="categoryFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent">
+                <option value="all">{t('projects.filter.all')}</option>
+                <option value="kuechen">{t('service.kitchen')}</option>
+                <option value="badmoebel">{t('service.bathroom')}</option>
+                <option value="ladenbau">{t('service.retail')}</option>
+                <option value="gastronomie">{t('service.gastronomy')}</option>
+                <option value="buero">{t('service.office')}</option>
+                <option value="outdoor">{t('service.outdoor')}</option>
+              </select>
             </div>
 
-            {/* Year Filter */}
-            <select class="form-input w-32" id="year-filter">
-              <option value="all">Alle Jahre</option>
-              <option value="2024">2024</option>
-              <option value="2023">2023</option>
-              <option value="2022">2022</option>
-            </select>
+            <div class="flex items-center gap-2">
+              <label class="text-sm font-medium text-gray-700">{t('projects.filter.year')}:</label>
+              <select id="yearFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent">
+                <option value="all">{t('projects.filter.all')}</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+              </select>
+            </div>
 
-            {/* Client Type Filter */}
-            <select class="form-input w-32" id="client-filter">
-              <option value="all">Alle Kunden</option>
-              <option value="privat">Privat</option>
-              <option value="b2b">B2B</option>
-            </select>
+            <div class="flex items-center gap-2">
+              <label class="text-sm font-medium text-gray-700">{t('projects.filter.client')}:</label>
+              <select id="clientFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent">
+                <option value="all">{t('projects.filter.all')}</option>
+                <option value="privat">{lang === 'en' ? 'Private' : 'Privat'}</option>
+                <option value="b2b">Business</option>
+                <option value="architekten">{lang === 'en' ? 'Architects' : 'Architekten'}</option>
+              </select>
+            </div>
 
-            {/* Results Count */}
-            <span class="ml-auto text-gray-600">
-              <span id="results-count">8</span> Projekte
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Grid */}
-      <section class="py-16">
-        <div class="container mx-auto px-4">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
-            {projects.map((project) => (
-              <div class="project-card" data-category={project.category} data-year={project.year} data-client={project.client.toLowerCase()}>
-                <a href={`/projekte/${project.id}`} class="group block">
-                  {/* Image Placeholder */}
-                  <div class="relative overflow-hidden rounded-lg mb-4">
-                    <div class="aspect-w-16 aspect-h-12 bg-gray-300">
-                      <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    </div>
-                    <div class="absolute top-4 left-4">
-                      <span class="bg-brand-brass text-white px-3 py-1 rounded-full text-sm">
-                        {project.year}
-                      </span>
-                    </div>
-                    <div class="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                      <p class="text-sm">Zum Projekt →</p>
-                    </div>
-                  </div>
-
-                  {/* Project Info */}
-                  <div>
-                    <div class="flex items-start justify-between mb-2">
-                      <h3 class="text-xl font-bold text-brand-anthrazit group-hover:text-brand-brass transition">
-                        {project.title}
-                      </h3>
-                      <span class="text-xs text-gray-500 uppercase tracking-wider">
-                        {project.client}
-                      </span>
-                    </div>
-                    
-                    <p class="text-gray-600 mb-4">
-                      {project.description}
-                    </p>
-
-                    {/* Features */}
-                    <div class="flex flex-wrap gap-2 mb-4">
-                      {project.features.map((feature) => (
-                        <span class="text-xs bg-brand-greige text-gray-700 px-2 py-1 rounded">
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Project Meta */}
-                    <div class="flex items-center justify-between text-sm text-gray-500 border-t pt-4">
-                      <span>
-                        <i class="fas fa-euro-sign mr-1"></i>
-                        {project.budget}
-                      </span>
-                      <span>
-                        <i class="fas fa-clock mr-1"></i>
-                        {project.duration}
-                      </span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            ))}
-          </div>
-
-          {/* Load More Button */}
-          <div class="text-center mt-12">
-            <button class="btn-primary">
-              <i class="fas fa-plus mr-2"></i>
-              Weitere Projekte laden
+            <button id="resetFilters" class="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
+              <i class="fas fa-undo mr-2"></i>
+              {lang === 'en' ? 'Reset' : 'Zurücksetzen'}
             </button>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section class="py-16 bg-brand-greige">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-display text-brand-anthrazit text-center mb-12">
-            Unsere Projekt-Bilanz
-          </h2>
-          
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div class="text-4xl font-bold text-brand-brass mb-2">500+</div>
-              <div class="text-gray-600">Projekte realisiert</div>
-            </div>
-            <div>
-              <div class="text-4xl font-bold text-brand-brass mb-2">25</div>
-              <div class="text-gray-600">Jahre Erfahrung</div>
-            </div>
-            <div>
-              <div class="text-4xl font-bold text-brand-brass mb-2">98%</div>
-              <div class="text-gray-600">Kundenzufriedenheit</div>
-            </div>
-            <div>
-              <div class="text-4xl font-bold text-brand-brass mb-2">100%</div>
-              <div class="text-gray-600">Termintreue</div>
-            </div>
+      {/* Projects Grid */}
+      <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+          <div id="projectsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map(project => (
+              <div 
+                class="project-item group cursor-pointer"
+                data-category={project.category}
+                data-year={project.year}
+                data-client={project.client}
+              >
+                <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <div class="flex items-center gap-2 mb-2 text-sm">
+                      <span class="px-2 py-1 bg-white/20 rounded">{project.year}</span>
+                      <span class="px-2 py-1 bg-white/20 rounded">
+                        {project.category === 'kuechen' && t('service.kitchen')}
+                        {project.category === 'badmoebel' && t('service.bathroom')}
+                        {project.category === 'ladenbau' && t('service.retail')}
+                        {project.category === 'gastronomie' && t('service.gastronomy')}
+                        {project.category === 'buero' && t('service.office')}
+                        {project.category === 'outdoor' && t('service.outdoor')}
+                      </span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">{project.title}</h3>
+                    <p class="text-sm opacity-90">{project.description}</p>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <h3 class="font-bold text-lg mb-1">{project.title}</h3>
+                  <p class="text-gray-600">{project.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
-      </section>
 
-      {/* Process Section */}
-      <section class="py-16">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-display text-brand-anthrazit text-center mb-12">
-            Unser Projekt-Prozess
-          </h2>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
-            <div class="text-center">
-              <div class="w-16 h-16 bg-brand-brass rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                1
-              </div>
-              <h3 class="font-semibold text-brand-anthrazit mb-2">Erstberatung</h3>
-              <p class="text-sm text-gray-600">Wir verstehen Ihre Vision</p>
-            </div>
-
-            <div class="text-center">
-              <div class="w-16 h-16 bg-brand-brass rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                2
-              </div>
-              <h3 class="font-semibold text-brand-anthrazit mb-2">Konzeption</h3>
-              <p class="text-sm text-gray-600">Entwicklung der Ideen</p>
-            </div>
-
-            <div class="text-center">
-              <div class="w-16 h-16 bg-brand-brass rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                3
-              </div>
-              <h3 class="font-semibold text-brand-anthrazit mb-2">Planung</h3>
-              <p class="text-sm text-gray-600">Detaillierte Ausarbeitung</p>
-            </div>
-
-            <div class="text-center">
-              <div class="w-16 h-16 bg-brand-brass rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                4
-              </div>
-              <h3 class="font-semibold text-brand-anthrazit mb-2">Produktion</h3>
-              <p class="text-sm text-gray-600">Fertigung in der Manufaktur</p>
-            </div>
-
-            <div class="text-center">
-              <div class="w-16 h-16 bg-brand-brass rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                5
-              </div>
-              <h3 class="font-semibold text-brand-anthrazit mb-2">Montage</h3>
-              <p class="text-sm text-gray-600">Professionelle Installation</p>
-            </div>
-
-            <div class="text-center">
-              <div class="w-16 h-16 bg-brand-brass rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                6
-              </div>
-              <h3 class="font-semibold text-brand-anthrazit mb-2">Nachbetreuung</h3>
-              <p class="text-sm text-gray-600">Service & Wartung</p>
-            </div>
+          {/* No Results Message */}
+          <div id="noResults" class="hidden text-center py-12">
+            <i class="fas fa-search text-6xl text-gray-300 mb-4"></i>
+            <p class="text-xl text-gray-500">
+              {lang === 'en' 
+                ? 'No projects found with the selected filters.'
+                : 'Keine Projekte mit den gewählten Filtern gefunden.'}
+            </p>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section class="py-16 bg-gradient-to-r from-brand-anthrazit to-gray-800 text-white">
-        <div class="container mx-auto px-4 text-center">
-          <h2 class="text-4xl font-display mb-6">
-            Ihr Projekt wartet auf Sie
+      <section class="py-20 bg-gradient-to-r from-brand-anthrazit to-gray-900 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+          <h2 class="font-display text-4xl mb-6">
+            {lang === 'en'
+              ? 'Ready to Start Your Project?'
+              : 'Bereit für Ihr Projekt?'}
           </h2>
-          <p class="text-xl mb-10 max-w-2xl mx-auto text-gray-300">
-            Lassen Sie uns gemeinsam Ihre Vision verwirklichen. 
-            Von der ersten Idee bis zur perfekten Umsetzung.
+          <p class="text-xl mb-8 opacity-90">
+            {lang === 'en'
+              ? "Let's create something extraordinary together."
+              : 'Lassen Sie uns gemeinsam etwas Außergewöhnliches schaffen.'}
           </p>
-          
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/kontakt#projekt" class="btn-primary-large bg-white text-brand-anthrazit hover:bg-gray-100">
-              <i class="fas fa-rocket mr-2"></i>
-              Projekt starten
+            <a href={`/kontakt?lang=${lang}`} class="btn-white-large">
+              <i class="fas fa-comments mr-2"></i>
+              {t('action.request_consultation')}
             </a>
-            <a href="/downloads" class="btn-secondary-large">
+            <a href={`/downloads?lang=${lang}`} class="btn-white-outline-large">
               <i class="fas fa-download mr-2"></i>
-              Planungshilfen
+              {lang === 'en' ? 'Download Brochure' : 'Broschüre herunterladen'}
             </a>
           </div>
         </div>
       </section>
 
-      {/* Add custom styles for filter buttons */}
-      <style dangerouslySetInnerHTML={{__html: `
-        .filter-btn {
-          @apply px-4 py-2 rounded-full border border-gray-300 bg-white text-gray-700 hover:bg-brand-brass hover:text-white hover:border-brand-brass transition-all;
-        }
-        .filter-btn.active {
-          @apply bg-brand-brass text-white border-brand-brass;
-        }
-        .project-card {
-          @apply transition-all duration-300;
-        }
-        .project-card.hidden {
-          @apply hidden;
-        }
-      `}} />
-
       {/* Filter Script */}
       <script dangerouslySetInnerHTML={{__html: `
         document.addEventListener('DOMContentLoaded', function() {
-          const filterButtons = document.querySelectorAll('.filter-btn');
-          const yearFilter = document.getElementById('year-filter');
-          const clientFilter = document.getElementById('client-filter');
-          const projectCards = document.querySelectorAll('.project-card');
-          const resultsCount = document.getElementById('results-count');
+          const categoryFilter = document.getElementById('categoryFilter');
+          const yearFilter = document.getElementById('yearFilter');
+          const clientFilter = document.getElementById('clientFilter');
+          const resetButton = document.getElementById('resetFilters');
+          const projectsGrid = document.getElementById('projectsGrid');
+          const noResults = document.getElementById('noResults');
+          const projectItems = document.querySelectorAll('.project-item');
 
-          function applyFilters() {
-            const activeCategory = document.querySelector('.filter-btn.active').dataset.filter;
-            const selectedYear = yearFilter.value;
-            const selectedClient = clientFilter.value;
-
+          function filterProjects() {
+            const category = categoryFilter.value;
+            const year = yearFilter.value;
+            const client = clientFilter.value;
+            
             let visibleCount = 0;
 
-            projectCards.forEach(card => {
-              const category = card.dataset.category;
-              const year = card.dataset.year;
-              const client = card.dataset.client;
+            projectItems.forEach(item => {
+              const itemCategory = item.dataset.category;
+              const itemYear = item.dataset.year;
+              const itemClient = item.dataset.client;
 
-              let show = true;
+              const categoryMatch = category === 'all' || itemCategory === category;
+              const yearMatch = year === 'all' || itemYear === year;
+              const clientMatch = client === 'all' || itemClient === client;
 
-              if (activeCategory !== 'all' && category !== activeCategory) {
-                show = false;
-              }
-              if (selectedYear !== 'all' && year !== selectedYear) {
-                show = false;
-              }
-              if (selectedClient !== 'all' && client !== selectedClient) {
-                show = false;
-              }
-
-              if (show) {
-                card.classList.remove('hidden');
+              if (categoryMatch && yearMatch && clientMatch) {
+                item.style.display = '';
                 visibleCount++;
               } else {
-                card.classList.add('hidden');
+                item.style.display = 'none';
               }
             });
 
-            resultsCount.textContent = visibleCount;
+            if (visibleCount === 0) {
+              noResults.classList.remove('hidden');
+            } else {
+              noResults.classList.add('hidden');
+            }
           }
 
-          filterButtons.forEach(btn => {
-            btn.addEventListener('click', function() {
-              filterButtons.forEach(b => b.classList.remove('active'));
-              this.classList.add('active');
-              applyFilters();
-            });
-          });
+          categoryFilter.addEventListener('change', filterProjects);
+          yearFilter.addEventListener('change', filterProjects);
+          clientFilter.addEventListener('change', filterProjects);
 
-          yearFilter.addEventListener('change', applyFilters);
-          clientFilter.addEventListener('change', applyFilters);
+          resetButton.addEventListener('click', function() {
+            categoryFilter.value = 'all';
+            yearFilter.value = 'all';
+            clientFilter.value = 'all';
+            filterProjects();
+          });
         });
       `}} />
     </>,
     { 
-      title: 'Projekte | Brandstifter Urban Manufactur',
-      description: 'Entdecken Sie unsere realisierten Projekte. Küchen, Badmöbel, Ladenbau, Gastronomie-Einrichtung und mehr. 500+ erfolgreich umgesetzte Projekte.'
+      title: lang === 'en'
+        ? 'Projects | Brandstifter Urban Manufactur'
+        : 'Projekte | Brandstifter Urban Manufactur',
+      description: lang === 'en'
+        ? 'Explore our portfolio of custom kitchens, bathrooms, retail spaces, and more. Get inspired for your project.'
+        : 'Entdecken Sie unser Portfolio von maßgefertigten Küchen, Bädern, Ladenbau und mehr. Lassen Sie sich inspirieren.'
     }
   )
 })
