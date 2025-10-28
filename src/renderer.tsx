@@ -1,4 +1,5 @@
 import { jsxRenderer } from 'hono/jsx-renderer'
+import { MobileMenu } from './components/MobileMenu'
 
 export const renderer = jsxRenderer(({ children, title, description }) => {
   return (
@@ -121,6 +122,9 @@ export const renderer = jsxRenderer(({ children, title, description }) => {
             </div>
           </div>
         </nav>
+        
+        {/* Mobile Menu */}
+        <MobileMenu />
         
         {/* Main Content */}
         <main>{children}</main>
