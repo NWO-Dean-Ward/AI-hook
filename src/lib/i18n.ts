@@ -16,10 +16,16 @@ export function getLanguage(c: Context): Language {
     return urlLang as Language
   }
 
-  // 2. Check cookie
-  const cookieLang = c.req.cookie('language')
-  if (cookieLang && languages.includes(cookieLang as Language)) {
-    return cookieLang as Language
+  // 2. Check cookie (safely - cookie middleware might not be available in Cloudflare Workers)
+  try {
+    const cookieLang = c.req.header('Cookie')?.split(';')
+      .find(c => c.trim().startsWith('language='))
+      ?.split('=')[1]
+    if (cookieLang && languages.includes(cookieLang as Language)) {
+      return cookieLang as Language
+    }
+  } catch (e) {
+    // Cookie not available, continue with other methods
   }
 
   // 3. Check Accept-Language header
@@ -423,9 +429,7 @@ export function createTranslator(c: Context) {
 
 // Middleware to set language cookie
 export function setLanguageCookie(c: Context, lang: Language) {
-  c.cookie('language', lang, {
-    maxAge: 60 * 60 * 24 * 365, // 1 year
-    httpOnly: false,
-    sameSite: 'Lax'
-  })
+  // For Cloudflare Workers, we set the cookie header manually
+  const cookieValue = `language=${lang}; Max-Age=${60 * 60 * 24 * 365}; Path=/; SameSite=Lax`
+  c.header('Set-Cookie', cookieValue)
 }
