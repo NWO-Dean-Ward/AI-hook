@@ -13,6 +13,12 @@ import { downloadsRoute } from './routes/downloads'
 import { apiRoute } from './routes/api'
 import ueberUnsRoute from './routes/ueber-uns'
 
+// Import admin routes
+import authRoute from './routes/admin/auth'
+import projectsRoute from './routes/admin/projects'
+import blogRoute from './routes/admin/blog'
+import adminDashboardRoute from './routes/admin/dashboard'
+
 const app = new Hono()
 
 // Enable CORS for API routes
@@ -35,6 +41,12 @@ app.route('/ueber-uns', ueberUnsRoute)
 app.route('/kontakt', kontaktRoute)
 app.route('/downloads', downloadsRoute)
 app.route('/api', apiRoute)
+
+// Mount admin routes
+app.route('/admin', adminDashboardRoute)
+app.route('/api/admin/auth', authRoute)
+app.route('/api/admin/projects', projectsRoute)
+app.route('/api/admin/blog', blogRoute)
 
 // 404 handler
 app.notFound((c) => {
