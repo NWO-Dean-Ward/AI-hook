@@ -595,10 +595,11 @@ leistungenRoute.get('/kuechen', (c) => {
       description: 'Maßgefertigte Premium-Küchen aus unserer Manufaktur. Individuelle Planung, hochwertige Materialien, perfekte Umsetzung. Jetzt beraten lassen!'
     }
   )
-  
-  // Badmöbel Detail Page
-  else if (serviceId === 'badmoebel') {
-    return c.html(
+})
+
+// Badmöbel detail page
+leistungenRoute.get('/badmoebel', (c) => {
+  return c.render(
       <>
         {/* Hero Section */}
         <section class="relative bg-gradient-to-br from-blue-50 to-gray-100 py-20">
@@ -1013,11 +1014,11 @@ leistungenRoute.get('/kuechen', (c) => {
         description: 'Maßgefertigte Badmöbel für Ihr persönliches Wellness-Paradies. Hochwertige Materialien, wasserfeste Verarbeitung, individuelle Planung.'
       }
     )
-  }
-  
-  // Ladenbau Detail Page
-  else if (serviceId === 'ladenbau') {
-    return c.html(
+})
+
+// Ladenbau detail page
+leistungenRoute.get('/ladenbau', (c) => {
+  return c.render(
       <>
         {/* Hero Section */}
         <section class="relative bg-gradient-to-br from-purple-50 to-gray-100 py-20">
@@ -1364,11 +1365,11 @@ leistungenRoute.get('/kuechen', (c) => {
         description: 'Professioneller Ladenbau für Retail, Fashion & mehr. Vom Konzept bis zur Eröffnung - wir schaffen Verkaufsräume, die begeistern.'
       }
     )
-  }
-  
-  // Gastronomie Detail Page
-  else if (serviceId === 'gastronomie') {
-    return c.html(
+})
+
+// Gastronomie detail page
+leistungenRoute.get('/gastronomie', (c) => {
+  return c.render(
       <>
         {/* Hero Section */}
         <section class="relative bg-gradient-to-br from-orange-50 to-gray-100 py-20">
@@ -1714,11 +1715,11 @@ leistungenRoute.get('/kuechen', (c) => {
         description: 'Professionelle Gastronomieeinrichtung vom Café bis zum Sterne-Restaurant. Komplettausstattung, HACCP-konform, individuelles Design.'
       }
     )
-  }
-  
-  // Büro & Office Detail Page
-  else if (serviceId === 'buero') {
-    return c.html(
+})
+
+// Büro & Office detail page
+leistungenRoute.get('/buero', (c) => {
+  return c.render(
       <>
         {/* Hero Section */}
         <section class="relative bg-gradient-to-br from-green-50 to-gray-100 py-20">
@@ -2060,11 +2061,11 @@ leistungenRoute.get('/kuechen', (c) => {
         description: 'Moderne Bürokonzepte für New Work. Ergonomische Arbeitsplätze, flexible Raumkonzepte, nachhaltige Büromöbel. Jetzt beraten lassen!'
       }
     )
-  }
-  
-  // Outdoor Detail Page
-  else if (serviceId === 'outdoor') {
-    return c.html(
+})
+
+// Outdoor detail page
+leistungenRoute.get('/outdoor', (c) => {
+  return c.render(
       <>
         {/* Hero Section */}
         <section class="relative bg-gradient-to-br from-amber-50 to-gray-100 py-20">
@@ -2411,8 +2412,6 @@ leistungenRoute.get('/kuechen', (c) => {
         description: 'Premium Outdoor-Möbel und Terrassengestaltung. Outdoor-Küchen, Loungemöbel, wetterfeste Materialien. Erweitern Sie Ihren Wohnraum!'
       }
     )
-  }
-  
-  // Fallback for unknown service
-  return c.html(<><h1>Service not found</h1></>, { title: 'Service | Brandstifter' })
 })
+
+export default leistungenRoute
