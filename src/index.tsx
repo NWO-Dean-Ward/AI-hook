@@ -13,6 +13,9 @@ import { downloadsRoute } from './routes/downloads'
 import { apiRoute } from './routes/api'
 import ueberUnsRoute from './routes/ueber-uns'
 
+// Import service subpages
+import { kuechenRoute } from './routes/leistungen/kuechen'
+
 // Import admin routes
 import authRoute from './routes/admin/auth'
 import projectsRoute from './routes/admin/projects'
@@ -41,6 +44,9 @@ app.route('/ueber-uns', ueberUnsRoute)
 app.route('/kontakt', kontaktRoute)
 app.route('/downloads', downloadsRoute)
 app.route('/api', apiRoute)
+
+// Mount service subpages
+app.route('/leistungen/kuechen', kuechenRoute)
 
 // Mount admin routes
 app.route('/admin', adminDashboardRoute)

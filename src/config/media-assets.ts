@@ -15,11 +15,18 @@ export const mediaAssets = {
   // Service Images
   services: {
     kitchen: 'https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/c21be964-df82-4431-ab29-c2e1e413c103.png',
+    kitchenShowroom: 'https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/4161c94c-715d-41ee-b6c4-1557187c62d8.png',
     bathroom: 'https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/41ab6b3b-60ac-4d6a-96ab-66e8d9cd6f7a.png',
+    bathroomShowroom: 'https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/26f22cbd-c884-4348-b532-1534dd54f5a2.png',
     retail: 'https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/ce4db973-dc89-4eb1-8807-ff159dad4039.png',
+    retailConstruction: 'https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/4057fb41-bfba-4f7a-9da6-f38d82c9d2fe.png',
     gastronomy: 'https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/0e6041d6-797e-4d83-821a-3be024f7ddcd.png',
+    gastronomyInterior: 'https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/8fcbf5eb-6019-46d7-acbb-8265c5133d34.png',
     office: 'https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/5c3ca73b-9ec4-420c-b24c-af72f7a98594.png',
+    officeExecutive: 'https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/5eb7bdd4-a6f7-4188-b383-c6b9f42ace59.png',
+    outdoor: 'https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/ad565c97-47ac-4636-a121-3a52c784d053.png',
     workshop: 'https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/5b6e641d-cffe-4098-bc51-ec1cde08985b.png',
+    highTechShowroom: 'https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/559557d4-c844-4bb1-b0b0-3d003d118de8.png',
   },
 
   // Project Portfolio Images

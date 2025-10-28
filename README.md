@@ -1,166 +1,173 @@
-# Brandstifter Urban Manufactur - Premium Website
+# Krause Schreinerei - Premium Handwerk Website
 
 ## Projektübersicht
-- **Name**: Brandstifter Urban Manufactur Website
-- **Ziel**: Moderne, responsive, mehrsprachige Website für Premium-Manufaktur
-- **Tech-Stack**: Hono + TypeScript + Cloudflare Pages + TailwindCSS
-- **Status**: ✅ In Entwicklung (65% abgeschlossen)
+- **Name**: Krause Schreinerei Website
+- **Ziel**: Professionelle Website für eine Premium-Schreinerei mit CMS-Backend
+- **Features**: Multi-Language Support (DE/EN), Admin CMS, Projekt-Galerie, Blog-System
 
-## Live URLs
-- **Development**: https://3000-igt51bt1v9edusq27icyj-de59bda9.sandbox.novita.ai
-- **Production**: [Noch nicht deployed]
-- **GitHub**: [Repository noch nicht verknüpft]
+## URLs
+- **Lokale Entwicklung**: https://3000-igt51bt1v9edusq27icyj-de59bda9.sandbox.novita.ai
+- **GitHub**: Noch nicht verbunden (Benutzer muss GitHub-Autorisierung abschließen)
+- **Cloudflare Pages**: Bereit für Deployment
 
-## ✅ Implementierte Features (11 von 17 Tasks)
+## Fertiggestellte Features ✅
 
-### Hauptseiten (Alle zweisprachig DE/EN)
-- **Homepage** (`/`) - Hero, Services Grid, Testimonials, Trust Bar
-- **Leistungen** (`/leistungen`) - Übersicht aller Services
-  - Küchen & Wohnkonzepte (`/leistungen/kuechen`)
-  - Badmöbel & Wellness (`/leistungen/badmoebel`)
-  - Ladenbau & Retail (`/leistungen/ladenbau`)
-  - Gastronomie & Hospitality (`/leistungen/gastronomie`)
-  - Büro & Office (`/leistungen/buero`)
-  - Outdoor & Terrassen (`/leistungen/outdoor`)
-- **Projekte** (`/projekte`) - Galerie mit Filterung (Jahr, Kategorie, Kunde)
-- **Über Uns** (`/ueber-uns`) - Firmengeschichte, Team, Werte, Auszeichnungen
-- **Downloads** (`/downloads`) - Lead-Generierung mit Modal-Forms
-- **Kontakt** (`/kontakt`) - Umfangreiches Formular, Showroom-Info, Öffnungszeiten
+### 1. Design-Überarbeitung
+- ✅ Alle goldenen/messingfarbenen Elemente durch schwarz/weiß/grau ersetzt
+- ✅ Professionelles, modernes Design mit Tailwind CSS
+- ✅ Responsive Layout für alle Bildschirmgrößen
 
-### Technische Features
-- **🌐 Multi-Language Support** - Vollständige DE/EN Übersetzung
-  - Cookie-basierte Sprachspeicherung (1 Jahr)
-  - URL-Parameter Support (`?lang=en`)
-  - Browser-Language Detection
-  - Language Switcher mit Flaggen
-- **Responsive Design** - Mobile-first mit Tailwind CSS
-- **Mobile Menu** - Slide-in Navigation mit Submenu-Support
-- **API-Endpunkte** - Form-Handling mit Zod-Validierung
-- **Email-Service** - Abstraction Layer für Transactional Emails
-- **SEO** - Meta-Tags für alle Seiten in beiden Sprachen
+### 2. Medien-Assets
+- ✅ Hochwertige Bilder für alle Service-Kategorien erstellt:
+  - Küchen-Showroom
+  - Badezimmer-Showroom  
+  - High-Tech Showroom (Ladenbau)
+  - Restaurant-Innenraum
+  - Executive Büro
+  - Outdoor-Terrasse
+- ✅ Cross-Fade Video für Homepage-Hero erstellt
+- ✅ Alle Bilder in media-assets.ts zentralisiert
 
-## 🌍 Sprachunterstützung
+### 3. Backend CMS System
+- ✅ Vollständiges Datenbankschema (Cloudflare D1 SQLite)
+- ✅ JWT-Authentifizierung für Admin-Bereich
+- ✅ API-Endpunkte für Projekte und Blog-Posts
+- ✅ Admin-Dashboard UI implementiert
 
-### Verfügbare Sprachen
-- 🇩🇪 **Deutsch** (Standard)
-- 🇬🇧 **English**
+### 4. Service-Unterseiten
+- ✅ Küchen-Seite mit vollständigem Content und Bildern
+- ⏳ Weitere Service-Seiten vorbereitet (Struktur angelegt)
 
-### Übersetzte Bereiche
-- Navigation & Footer
-- Alle Hauptseiten-Inhalte
-- Formulare und Validierung
-- Call-to-Action Buttons
-- Meta-Descriptions & Titles
+## Funktionale Entry-URIs
 
-## 📊 Projekt-Statistiken
-- **Seiten**: 13 vollständige Seiten (alle zweisprachig)
-- **Übersetzungen**: 200+ Strings in 2 Sprachen
-- **Code**: 80,000+ Zeichen Content
-- **Components**: 4 wiederverwendbare Komponenten
-- **API Routes**: 3 Endpunkte
+### Hauptseiten
+- `/` - Homepage mit Hero-Video und Service-Übersicht
+- `/leistungen` - Service-Übersicht mit allen Kategorien
+- `/leistungen/kuechen` - Detailseite für Küchen & Wohnkonzepte
+- `/projekte` - Projekt-Galerie
+- `/manufaktur` - Über die Manufaktur
+- `/ueber-uns` - Über uns Seite
+- `/kontakt` - Kontaktseite mit Formular
+- `/downloads` - Download-Bereich
 
-## 🚀 Funktionale Entry-Points
-
-### Navigationsstruktur
-```
-/?lang=de|en              # Homepage
-/leistungen?lang=de|en    # Services Übersicht
-├── /kuechen             # Küchen-Details
-├── /badmoebel           # Bad-Details  
-├── /ladenbau            # Ladenbau-Details
-├── /gastronomie         # Gastro-Details
-├── /buero               # Büro-Details
-└── /outdoor             # Outdoor-Details
-/projekte?lang=de|en      # Portfolio mit Filtern
-/ueber-uns?lang=de|en     # About Us
-/downloads?lang=de|en     # Download-Center
-/kontakt?lang=de|en       # Kontaktformular
-```
+### Admin-Bereich
+- `/admin` - Admin Dashboard (JWT-geschützt)
+- `/api/admin/auth/login` - Admin Login (POST)
+- `/api/admin/projects` - Projekt-Verwaltung API
+- `/api/admin/blog` - Blog-Verwaltung API
 
 ### API-Endpunkte
-```
-POST /api/contact         # Kontaktformular
-POST /api/newsletter      # Newsletter-Anmeldung
-POST /api/download        # Download-Anfrage mit Lead-Capture
-```
+- `/api/contact` - Kontaktformular-Submission (POST)
+- `/api/newsletter` - Newsletter-Anmeldung (POST)
 
-## 🔄 Nächste Schritte (6 Tasks ausstehend)
+## Noch zu implementieren 🚧
 
-### Priorität Hoch
-1. **Impressum & Datenschutz** - Rechtliche Seiten (DE/EN)
+### 1. Service-Unterseiten vervollständigen
+- [ ] Badmöbel-Seite mit Content
+- [ ] Ladenbau-Seite mit Content
+- [ ] Gastronomie-Seite mit Content
+- [ ] Büromöbel-Seite mit Content
+- [ ] Outdoor-Seite mit Content
 
-### Priorität Mittel  
-2. **Cookie-Banner** - DSGVO-Konformität mit Sprachunterstützung
-3. **SEO-Optimierung** - Strukturierte Daten, hreflang-Tags
+### 2. GitHub Integration
+- [ ] GitHub-Repository verbinden (Autorisierung ausstehend)
+- [ ] Automatisches Deployment einrichten
 
-### Priorität Niedrig
-4. **404-Seite** - Custom Error Page (zweisprachig)
-5. **Performance** - Lazy Loading für Bilder
-6. **Sitemap** - Automatische Generierung mit Sprach-URLs
+### 3. Media Upload
+- [ ] Datei-Upload für Admin-Panel implementieren
+- [ ] Cloudflare R2 Storage konfigurieren
 
-## 🛠 Technische Architektur
+### 4. Weitere Features
+- [ ] Blog-System Frontend
+- [ ] Projekt-Filter und Suche
+- [ ] SEO-Optimierung
+- [ ] Analytics-Integration
 
-### i18n System
-- **Translation Keys**: Zentral in `src/lib/i18n.ts`
-- **Language Detection**: Cookie > URL > Browser > Default
-- **Components**: `LanguageSwitcher` für UI
-- **Persistence**: Cookie (1 Jahr Gültigkeit)
+## Empfohlene nächste Schritte
 
-### Datenmodell
-- **Projekte**: Kategorie, Jahr, Kunde, Bilder, Details
-- **Downloads**: PDF-Ressourcen mit Lead-Capture
-- **Kontakte**: Formular-Submissions (in-memory)
-- **Newsletter**: Email-Subscriptions (in-memory)
+1. **GitHub-Autorisierung abschließen**:
+   - Gehen Sie zum #github Tab in der Sandbox
+   - Autorisieren Sie die GitHub-Integration
+   - Danach kann das Repository verbunden werden
 
-## 📦 Installation & Development
+2. **Service-Unterseiten vervollständigen**:
+   - Content für restliche Service-Kategorien hinzufügen
+   - Bilder sind bereits vorbereitet und integriert
+
+3. **Cloudflare Deployment**:
+   - API-Key in Deploy-Tab konfigurieren
+   - Projekt mit `npm run deploy` veröffentlichen
+
+4. **CMS testen**:
+   - Admin-Account erstellen
+   - Projekte und Blog-Posts hinzufügen
+
+## Technologie-Stack
+- **Frontend**: Hono + TypeScript + Tailwind CSS
+- **Backend**: Cloudflare Workers/Pages
+- **Datenbank**: Cloudflare D1 (SQLite)
+- **Storage**: Cloudflare R2 (geplant)
+- **Deployment**: Cloudflare Pages
+- **Package Manager**: NPM
+- **Process Manager**: PM2
+
+## Entwicklungsbefehle
 
 ```bash
-# Installation
-npm install
+# Entwicklungsserver starten
+npm run dev:sandbox
 
-# Development
+# Projekt bauen
 npm run build
-pm2 start ecosystem.config.cjs
 
-# Production Build
-npm run build
-npm run deploy
+# Datenbank-Migrationen
+npm run db:migrate:local  # Lokal
+npm run db:migrate:prod   # Produktion
 
-# Test Sprachen
-curl http://localhost:3000/?lang=de
-curl http://localhost:3000/?lang=en
+# Git-Befehle
+npm run git:init    # Repository initialisieren
+npm run git:commit  # Änderungen committen
+npm run git:status  # Status anzeigen
+
+# Deployment
+npm run deploy      # Zu Cloudflare Pages deployen
 ```
 
-## 🎯 Deployment Status
-- **Platform**: Cloudflare Pages (vorbereitet)
-- **Build**: ✅ Erfolgreich
-- **Multi-Language**: ✅ Vollständig implementiert
-- **Tests**: ⚠️ Keine automatisierten Tests
-- **Docs**: ✅ README aktuell
+## Datenarchitektur
 
-## 📝 Changelog
-- **v0.7.0** - Multi-Language Support (DE/EN) vollständig
-- **v0.6.0** - Über Uns Seite mit Team und Geschichte
-- **v0.5.0** - Alle Service-Detail-Seiten implementiert
-- **v0.4.0** - Download-Center mit Lead-Generierung
-- **v0.3.0** - Projekt-Galerie mit Filterung
-- **v0.2.0** - Kontaktformular und API-Integration
-- **v0.1.0** - Grundgerüst und Navigation
+### Datenmodelle
+- **admin_users**: Admin-Benutzer mit JWT-Auth
+- **projects**: Portfolio-Projekte mit Bildern
+- **blog_posts**: Blog-Artikel mit SEO-Metadaten
+- **media**: Media-Asset-Verwaltung
+- **contact_submissions**: Kontaktformular-Einträge
 
-## 👥 Zielgruppen (International)
-1. **Privatkunden & Bauherren** - DE/EN Support
-2. **Architekten & Planer** - Internationale Projekte
-3. **Generalunternehmer** - Großprojekte
-4. **B2B** - Global agierende Unternehmen
+### Storage-Services
+- **Cloudflare D1**: Relationale Datenbank (SQLite)
+- **Cloudflare KV**: Key-Value Storage (geplant)
+- **Cloudflare R2**: Object Storage für Medien (geplant)
 
-## 🌟 USPs
-- **Zweisprachig** - Vollständige DE/EN Unterstützung
-- Premium-Manufaktur seit 2008
-- 45 Experten aus Handwerk & Design
-- 3.500m² Produktionsstätte
-- Klimaneutrale Produktion
-- German Design Award Winner
-- 2.500+ realisierte Projekte
+## Benutzerhandbuch
 
----
-*Letzte Aktualisierung: ${new Date().toISOString().split('T')[0]}*
+### Für Website-Besucher
+1. Navigieren Sie durch die Service-Kategorien
+2. Schauen Sie sich die Projekt-Galerie an
+3. Kontaktieren Sie uns über das Kontaktformular
+4. Abonnieren Sie den Newsletter für Updates
+
+### Für Administratoren
+1. Melden Sie sich unter `/admin` an
+2. Verwalten Sie Projekte und Blog-Posts
+3. Prüfen Sie Kontaktanfragen
+4. Laden Sie neue Medien hoch (in Entwicklung)
+
+## Deployment-Status
+- **Platform**: Cloudflare Pages
+- **Status**: ⏳ Bereit für Deployment (API-Key benötigt)
+- **Letztes Update**: 2025-01-28
+
+## Hinweise
+- Website läuft im Cloudflare Workers Environment (keine Node.js APIs)
+- Alle Medien-Assets sind optimiert für schnelle Ladezeiten
+- Multi-Language Support vollständig implementiert (DE/EN)
+- JWT-basierte Authentifizierung für Admin-Bereich
