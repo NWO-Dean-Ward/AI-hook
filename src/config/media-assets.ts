@@ -6,8 +6,8 @@ export const mediaAssets = {
   videos: {
     heroMain: 'https://cdn1.genspark.ai/user-upload-image/5/5279adc1-fdbb-4de4-afe1-97822a5f45ab.mp4',
     heroMainPoster: 'https://cdn1.genspark.ai/user-upload-image/video_frames/559097ce-9aea-4053-8c1e-e4869a1c4431.jpeg',
-    heroMorphing: 'https://cdn1.genspark.ai/user-upload-image/5/bafe9365-7e0d-4a9a-95c7-a6188c82f921.mp4',
-    heroMorphingPoster: 'https://cdn1.genspark.ai/user-upload-image/video_frames/5fcd31cc-5dae-4159-8ade-68a7b5fcad8b.jpeg',
+    heroMorphing: 'https://cdn1.genspark.ai/user-upload-image/5/d4d690b7-4b06-477f-9c2c-654c0b7c60d2.mp4',
+    heroMorphingPoster: 'https://cdn1.genspark.ai/user-upload-image/video_frames/6852f2b2-6112-4dbe-9d23-c4e17db6fe1f.jpeg',
     manufaktur: 'https://cdn1.genspark.ai/user-upload-image/5/df75bacd-e906-469d-868c-fd53a1fdd56a.mp4',
     manufakturPoster: 'https://cdn1.genspark.ai/user-upload-image/video_frames/c8148188-78e0-482a-a752-b6b63c02546d.jpeg',
   },
