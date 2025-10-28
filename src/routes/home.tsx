@@ -1,6 +1,7 @@
 import { Hono } from 'hono'
 import { Layout } from '../components/Layout'
 import { createTranslator } from '../lib/i18n'
+import { mediaAssets } from '../config/media-assets'
 
 export const homeRoute = new Hono()
 
@@ -9,10 +10,20 @@ homeRoute.get('/', (c) => {
   
   return c.render(
     <>
-      {/* Hero Section */}
+      {/* Hero Section with Video */}
       <section class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0">
-          <img src="/api/placeholder/1920/1080" alt="Premium Manufaktur" class="w-full h-full object-cover" />
+          <video 
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            poster={mediaAssets.videos.heroMainPoster}
+            class="w-full h-full object-cover"
+          >
+            <source src={mediaAssets.videos.heroMain} type="video/mp4" />
+            <img src={mediaAssets.videos.heroMainPoster} alt="Premium Manufaktur" class="w-full h-full object-cover" />
+          </video>
           <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50"></div>
         </div>
         
@@ -80,7 +91,7 @@ homeRoute.get('/', (c) => {
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <a href={`/leistungen/kuechen?lang=${lang}`} class="group">
               <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
-                <img src="/api/placeholder/600/400" alt={t('service.kitchen')} class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img src={mediaAssets.services.kitchen} alt={t('service.kitchen')} class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                   <div class="text-white">
                     <h3 class="text-2xl font-bold mb-2">{t('service.kitchen')}</h3>
@@ -92,7 +103,7 @@ homeRoute.get('/', (c) => {
             
             <a href={`/leistungen/badmoebel?lang=${lang}`} class="group">
               <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
-                <img src="/api/placeholder/600/400" alt={t('service.bathroom')} class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img src={mediaAssets.services.bathroom} alt={t('service.bathroom')} class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                   <div class="text-white">
                     <h3 class="text-2xl font-bold mb-2">{t('service.bathroom')}</h3>
@@ -104,7 +115,7 @@ homeRoute.get('/', (c) => {
             
             <a href={`/leistungen/ladenbau?lang=${lang}`} class="group">
               <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
-                <img src="/api/placeholder/600/400" alt={t('service.retail')} class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img src={mediaAssets.services.retail} alt={t('service.retail')} class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                   <div class="text-white">
                     <h3 class="text-2xl font-bold mb-2">{t('service.retail')}</h3>
@@ -116,7 +127,7 @@ homeRoute.get('/', (c) => {
             
             <a href={`/leistungen/gastronomie?lang=${lang}`} class="group">
               <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
-                <img src="/api/placeholder/600/400" alt={t('service.gastronomy')} class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img src={mediaAssets.services.gastronomy} alt={t('service.gastronomy')} class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                   <div class="text-white">
                     <h3 class="text-2xl font-bold mb-2">{t('service.gastronomy')}</h3>
@@ -128,7 +139,7 @@ homeRoute.get('/', (c) => {
             
             <a href={`/leistungen/buero?lang=${lang}`} class="group">
               <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
-                <img src="/api/placeholder/600/400" alt={t('service.office')} class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img src={mediaAssets.services.office} alt={t('service.office')} class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                   <div class="text-white">
                     <h3 class="text-2xl font-bold mb-2">{t('service.office')}</h3>
@@ -140,7 +151,7 @@ homeRoute.get('/', (c) => {
             
             <a href={`/leistungen/outdoor?lang=${lang}`} class="group">
               <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300">
-                <img src="/api/placeholder/600/400" alt={t('service.outdoor')} class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
+                <img src={mediaAssets.services.workshop} alt={t('service.outdoor')} class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                   <div class="text-white">
                     <h3 class="text-2xl font-bold mb-2">{t('service.outdoor')}</h3>
