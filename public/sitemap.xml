@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main sitemap index for Brandstifter Urban Manufactur -->
+  
+  <!-- German sitemap (primary) -->
+  <sitemap>
+    <loc>https://brandstifter.online/sitemap-de.xml</loc>
+    <lastmod>2025-01-28</lastmod>
+  </sitemap>
+  
+  <!-- English sitemap -->
+  <sitemap>
+    <loc>https://brandstifter.online/sitemap-en.xml</loc>
+    <lastmod>2025-01-28</lastmod>
+  </sitemap>
+  
+  <!-- Image sitemap -->
+  <sitemap>
+    <loc>https://brandstifter.online/sitemap-images.xml</loc>
+    <lastmod>2025-01-28</lastmod>
+  </sitemap>
+</sitemapindex>

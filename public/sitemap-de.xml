@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://brandstifter.online/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brandstifter.online/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://brandstifter.online/?lang=de"/>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Leistungen (Services) -->
+  <url>
+    <loc>https://brandstifter.online/leistungen</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brandstifter.online/leistungen?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://brandstifter.online/leistungen?lang=de"/>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Küchen -->
+  <url>
+    <loc>https://brandstifter.online/leistungen/kuechen</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brandstifter.online/leistungen/kuechen?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://brandstifter.online/leistungen/kuechen?lang=de"/>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Badmöbel -->
+  <url>
+    <loc>https://brandstifter.online/leistungen/badmoebel</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brandstifter.online/leistungen/badmoebel?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://brandstifter.online/leistungen/badmoebel?lang=de"/>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Ladenbau -->
+  <url>
+    <loc>https://brandstifter.online/leistungen/ladenbau</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brandstifter.online/leistungen/ladenbau?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://brandstifter.online/leistungen/ladenbau?lang=de"/>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Gastronomie -->
+  <url>
+    <loc>https://brandstifter.online/leistungen/gastronomie</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brandstifter.online/leistungen/gastronomie?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://brandstifter.online/leistungen/gastronomie?lang=de"/>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Büro -->
+  <url>
+    <loc>https://brandstifter.online/leistungen/buero</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brandstifter.online/leistungen/buero?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://brandstifter.online/leistungen/buero?lang=de"/>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Outdoor -->
+  <url>
+    <loc>https://brandstifter.online/leistungen/outdoor</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brandstifter.online/leistungen/outdoor?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://brandstifter.online/leistungen/outdoor?lang=de"/>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Projekte -->
+  <url>
+    <loc>https://brandstifter.online/projekte</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brandstifter.online/projekte?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://brandstifter.online/projekte?lang=de"/>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Manufaktur -->
+  <url>
+    <loc>https://brandstifter.online/manufaktur</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brandstifter.online/manufaktur?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://brandstifter.online/manufaktur?lang=de"/>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Über Uns -->
+  <url>
+    <loc>https://brandstifter.online/ueber-uns</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brandstifter.online/ueber-uns?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://brandstifter.online/ueber-uns?lang=de"/>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Kontakt -->
+  <url>
+    <loc>https://brandstifter.online/kontakt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brandstifter.online/kontakt?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://brandstifter.online/kontakt?lang=de"/>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Downloads -->
+  <url>
+    <loc>https://brandstifter.online/downloads</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://brandstifter.online/downloads?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://brandstifter.online/downloads?lang=de"/>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>

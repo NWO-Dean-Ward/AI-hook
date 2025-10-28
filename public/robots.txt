@@ -1,0 +1,47 @@
+# Robots.txt for Brandstifter Urban Manufactur
+# https://brandstifter.online
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /.well-known/
+Disallow: /tmp/
+Disallow: /private/
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Allow image crawlers
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /media/
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.png
+Allow: *.webp
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://brandstifter.online/sitemap.xml
+Sitemap: https://brandstifter.online/sitemap-de.xml
+Sitemap: https://brandstifter.online/sitemap-en.xml
