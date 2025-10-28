@@ -1,6 +1,7 @@
 import { Hono } from 'hono'
 import { Layout } from '../components/Layout'
 import { createTranslator } from '../lib/i18n'
+import { mediaAssets } from '../config/media-assets'
 
 export const kontaktRoute = new Hono()
 
@@ -9,9 +10,12 @@ kontaktRoute.get('/', (c) => {
   
   return c.render(
     <>
-      {/* Hero Section */}
-      <section class="relative h-64 bg-gradient-to-br from-brand-anthrazit to-gray-800 flex items-center justify-center">
-        <div class="absolute inset-0 bg-black/20"></div>
+      {/* Hero Section with Showroom Image */}
+      <section class="relative h-64 flex items-center justify-center">
+        <div class="absolute inset-0">
+          <img src={mediaAssets.contact.showroom} alt="Showroom" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-br from-brand-anthrazit/80 to-gray-800/80"></div>
+        </div>
         <div class="relative z-10 text-center text-white">
           <h1 class="font-display text-4xl md:text-6xl mb-4">{t('contact.title')}</h1>
           <p class="text-xl opacity-90">{t('contact.subtitle')}</p>

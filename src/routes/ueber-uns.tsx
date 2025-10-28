@@ -1,5 +1,6 @@
 import { Hono } from 'hono'
 import { Layout } from '../components/Layout'
+import { mediaAssets } from '../config/media-assets'
 
 const ueberUnsRoute = new Hono()
 
@@ -9,7 +10,7 @@ ueberUnsRoute.get('/', (c) => {
       {/* Hero Section */}
       <section class="relative h-[70vh] flex items-center justify-center">
         <div class="absolute inset-0">
-          <img src="/api/placeholder/1920/800" alt="Brandstifter Manufaktur" class="w-full h-full object-cover" />
+          <img src={mediaAssets.about.building} alt="Brandstifter Manufaktur" class="w-full h-full object-cover" />
           <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"></div>
         </div>
         
@@ -74,7 +75,7 @@ ueberUnsRoute.get('/', (c) => {
               </div>
             </div>
             <div class="relative">
-              <img src="/api/placeholder/600/400" alt="Michael Brandstifter in der Werkstatt" class="rounded-lg shadow-xl" />
+              <img src={mediaAssets.services.workshop} alt="Michael Brandstifter in der Werkstatt" class="rounded-lg shadow-xl" />
               <div class="absolute -bottom-6 -right-6 bg-black text-white p-6 rounded-lg">
                 <blockquote class="italic">
                   "Jeder Raum erzählt eine Geschichte. Wir helfen Ihnen, Ihre zu schreiben."
@@ -192,7 +193,7 @@ ueberUnsRoute.get('/', (c) => {
           <div class="grid md:grid-cols-3 gap-8 mb-16">
             <div class="text-center">
               <div class="relative mb-6 inline-block">
-                <img src="/api/placeholder/300/300" alt="Michael Brandstifter" class="rounded-full w-48 h-48 mx-auto object-cover" />
+                <img src={mediaAssets.about.teamMeeting} alt="Michael Brandstifter" class="rounded-full w-48 h-48 mx-auto object-cover" />
                 <div class="absolute -bottom-2 -right-2 bg-black text-white rounded-full w-12 h-12 flex items-center justify-center">
                   <i class="fab fa-linkedin"></i>
                 </div>

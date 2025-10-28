@@ -18,11 +18,11 @@ homeRoute.get('/', (c) => {
             muted 
             loop 
             playsinline 
-            poster={mediaAssets.videos.heroMainPoster}
+            poster={mediaAssets.videos.heroMorphingPoster}
             class="w-full h-full object-cover"
           >
-            <source src={mediaAssets.videos.heroMain} type="video/mp4" />
-            <img src={mediaAssets.videos.heroMainPoster} alt="Premium Manufaktur" class="w-full h-full object-cover" />
+            <source src={mediaAssets.videos.heroMorphing} type="video/mp4" />
+            <img src={mediaAssets.videos.heroMorphingPoster} alt="Premium Manufaktur" class="w-full h-full object-cover" />
           </video>
           <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50"></div>
         </div>
