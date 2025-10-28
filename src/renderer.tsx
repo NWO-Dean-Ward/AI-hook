@@ -1,14 +1,25 @@
 import { jsxRenderer } from 'hono/jsx-renderer'
 import { MobileMenu } from './components/MobileMenu'
+import { LanguageSwitcher } from './components/LanguageSwitcher'
+import { createTranslator } from './lib/i18n'
 
-export const renderer = jsxRenderer(({ children, title, description }) => {
+export const renderer = jsxRenderer(({ children, title, description }, c) => {
+  const { lang, t, switchUrl } = createTranslator(c)
+  
+  const defaultTitle = lang === 'en' 
+    ? 'Brandstifter Urban Manufactur | Premium Room Concepts' 
+    : 'Brandstifter Urban Manufactur | Premium Manufaktur für individuelle Raumkonzepte'
+  const defaultDescription = lang === 'en'
+    ? 'Premium manufactory for custom kitchens, bathroom furniture, shop fitting and gastronomy equipment. Made in Wetterau since 2008.'
+    : 'Premium-Manufaktur für maßgefertigte Küchen, Badmöbel, Ladenbau und Gastronomie-Einrichtung. Made in Wetterau seit 2008.'
+  
   return (
-    <html lang="de">
+    <html lang={lang}>
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{title || 'Brandstifter Urban Manufactur | Premium Manufaktur für individuelle Raumkonzepte'}</title>
-        <meta name="description" content={description || 'Premium-Manufaktur für maßgefertigte Küchen, Badmöbel, Ladenbau und Gastronomie-Einrichtung. Made in Wetterau seit 1999.'} />
+        <title>{title || defaultTitle}</title>
+        <meta name="description" content={description || defaultDescription} />
         
         {/* Favicon */}
         <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
@@ -65,48 +76,44 @@ export const renderer = jsxRenderer(({ children, title, description }) => {
               
               {/* Main Navigation */}
               <div class="hidden lg:flex items-center space-x-8">
-                <a href="/" class="nav-link">Home</a>
+                <a href={`/?lang=${lang}`} class="nav-link">{t('nav.home')}</a>
                 
                 <div class="relative group">
-                  <a href="/leistungen" class="nav-link flex items-center">
-                    Leistungen <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                  <a href={`/leistungen?lang=${lang}`} class="nav-link flex items-center">
+                    {t('nav.services')} <i class="fas fa-chevron-down ml-1 text-xs"></i>
                   </a>
                   <div class="absolute top-full left-0 w-64 bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 mt-2">
-                    <a href="/leistungen/kuechen" class="block px-4 py-3 hover:bg-brand-greige transition">Küchen & Wohnkonzepte</a>
-                    <a href="/leistungen/badmoebel" class="block px-4 py-3 hover:bg-brand-greige transition">Badmöbel & Wellness</a>
-                    <a href="/leistungen/ladenbau" class="block px-4 py-3 hover:bg-brand-greige transition">Ladenbau & Retail</a>
-                    <a href="/leistungen/gastronomie" class="block px-4 py-3 hover:bg-brand-greige transition">Gastronomie & Hospitality</a>
-                    <a href="/leistungen/buero" class="block px-4 py-3 hover:bg-brand-greige transition">Büro & Workspaces</a>
+                    <a href={`/leistungen/kuechen?lang=${lang}`} class="block px-4 py-3 hover:bg-brand-greige transition">{t('service.kitchen')}</a>
+                    <a href={`/leistungen/badmoebel?lang=${lang}`} class="block px-4 py-3 hover:bg-brand-greige transition">{t('service.bathroom')}</a>
+                    <a href={`/leistungen/ladenbau?lang=${lang}`} class="block px-4 py-3 hover:bg-brand-greige transition">{t('service.retail')}</a>
+                    <a href={`/leistungen/gastronomie?lang=${lang}`} class="block px-4 py-3 hover:bg-brand-greige transition">{t('service.gastronomy')}</a>
+                    <a href={`/leistungen/buero?lang=${lang}`} class="block px-4 py-3 hover:bg-brand-greige transition">{t('service.office')}</a>
                   </div>
                 </div>
                 
-                <a href="/projekte" class="nav-link">Projekte</a>
-                <a href="/manufaktur" class="nav-link">Manufaktur</a>
+                <a href={`/projekte?lang=${lang}`} class="nav-link">{t('nav.projects')}</a>
+                <a href={`/manufaktur?lang=${lang}`} class="nav-link">{t('nav.manufactory')}</a>
                 
                 <div class="relative group">
-                  <a href="/fuer-sie" class="nav-link flex items-center">
-                    Für Sie <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                  <a href={`/fuer-sie?lang=${lang}`} class="nav-link flex items-center">
+                    {t('nav.for_you')} <i class="fas fa-chevron-down ml-1 text-xs"></i>
                   </a>
                   <div class="absolute top-full left-0 w-64 bg-white shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 mt-2">
-                    <a href="/privatkunden" class="block px-4 py-3 hover:bg-brand-greige transition">Privatkunden & Bauherren</a>
-                    <a href="/architekten" class="block px-4 py-3 hover:bg-brand-greige transition">Architekten & Planer</a>
-                    <a href="/generalunternehmer" class="block px-4 py-3 hover:bg-brand-greige transition">Generalunternehmer</a>
-                    <a href="/b2b" class="block px-4 py-3 hover:bg-brand-greige transition">Business & Corporate</a>
+                    <a href={`/privatkunden?lang=${lang}`} class="block px-4 py-3 hover:bg-brand-greige transition">{t('customer.private')}</a>
+                    <a href={`/architekten?lang=${lang}`} class="block px-4 py-3 hover:bg-brand-greige transition">{t('customer.architects')}</a>
+                    <a href={`/generalunternehmer?lang=${lang}`} class="block px-4 py-3 hover:bg-brand-greige transition">{t('customer.contractors')}</a>
+                    <a href={`/b2b?lang=${lang}`} class="block px-4 py-3 hover:bg-brand-greige transition">{t('customer.b2b')}</a>
                   </div>
                 </div>
                 
-                <a href="/ueber-uns" class="nav-link">Über uns</a>
-                <a href="/kontakt" class="nav-link">Kontakt</a>
+                <a href={`/ueber-uns?lang=${lang}`} class="nav-link">{t('nav.about')}</a>
+                <a href={`/kontakt?lang=${lang}`} class="nav-link">{t('nav.contact')}</a>
               </div>
               
               {/* Right Actions */}
               <div class="flex items-center space-x-4">
                 {/* Language Switcher */}
-                <div class="flex items-center space-x-2 text-sm">
-                  <button class="font-semibold text-brand-anthrazit">DE</button>
-                  <span class="text-gray-300">|</span>
-                  <button class="text-gray-500 hover:text-brand-anthrazit transition">EN</button>
-                </div>
+                <LanguageSwitcher currentLang={lang} switchUrl={switchUrl} />
                 
                 {/* CTA Button */}
                 <a href="/kontakt#termin" class="btn-primary hidden md:block">
@@ -137,8 +144,7 @@ export const renderer = jsxRenderer(({ children, title, description }) => {
               <div>
                 <h3 class="text-xl font-bold mb-4">Brandstifter Urban Manufactur</h3>
                 <p class="text-gray-400 mb-4">
-                  Premium-Manufaktur für individuelle Raumkonzepte. 
-                  Made in Wetterau seit 1999.
+                  {t('footer.company')}
                 </p>
                 <div class="flex space-x-4">
                   <a href="#" class="text-gray-400 hover:text-white transition">
@@ -158,7 +164,7 @@ export const renderer = jsxRenderer(({ children, title, description }) => {
               
               {/* Quick Links */}
               <div>
-                <h4 class="font-semibold mb-4">Leistungen</h4>
+                <h4 class="font-semibold mb-4">{t('footer.services')}</h4>
                 <ul class="space-y-2">
                   <li><a href="/leistungen/kuechen" class="text-gray-400 hover:text-white transition">Küchen</a></li>
                   <li><a href="/leistungen/badmoebel" class="text-gray-400 hover:text-white transition">Badmöbel</a></li>
@@ -206,12 +212,12 @@ export const renderer = jsxRenderer(({ children, title, description }) => {
             <div class="border-t border-gray-700 mt-12 pt-8">
               <div class="flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400 text-sm">
-                  © 2024 Brandstifter Urban Manufactur. Alle Rechte vorbehalten.
+                  © 2024 Brandstifter Urban Manufactur. {t('footer.rights')}
                 </p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
-                  <a href="/impressum" class="text-gray-400 hover:text-white text-sm transition">Impressum</a>
-                  <a href="/datenschutz" class="text-gray-400 hover:text-white text-sm transition">Datenschutz</a>
-                  <a href="/agb" class="text-gray-400 hover:text-white text-sm transition">AGB</a>
+                  <a href={`/impressum?lang=${lang}`} class="text-gray-400 hover:text-white text-sm transition">{t('footer.imprint')}</a>
+                  <a href={`/datenschutz?lang=${lang}`} class="text-gray-400 hover:text-white text-sm transition">{t('footer.privacy')}</a>
+                  <a href={`/agb?lang=${lang}`} class="text-gray-400 hover:text-white text-sm transition">{t('footer.terms')}</a>
                 </div>
               </div>
             </div>
