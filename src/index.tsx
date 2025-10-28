@@ -42,6 +42,16 @@ app.use('/downloads/*', serveStatic({ root: './public' }))
 
 // Mount routes
 app.route('/', homeRoute)
+
+// Mount service subpages FIRST (before general /leistungen route)
+app.route('/leistungen/kuechen', kuechenRoute)
+app.route('/leistungen/badmoebel', badmoebelRoute)
+app.route('/leistungen/ladenbau', ladenbauRoute)
+app.route('/leistungen/gastronomie', gastronomieRoute)
+app.route('/leistungen/buero', bueroRoute)
+app.route('/leistungen/outdoor', outdoorRoute)
+
+// Mount general routes AFTER specific ones
 app.route('/leistungen', leistungenRoute)
 app.route('/projekte', projekteRoute)
 app.route('/manufaktur', manufakturRoute)
@@ -49,14 +59,6 @@ app.route('/ueber-uns', ueberUnsRoute)
 app.route('/kontakt', kontaktRoute)
 app.route('/downloads', downloadsRoute)
 app.route('/api', apiRoute)
-
-// Mount service subpages
-app.route('/leistungen/kuechen', kuechenRoute)
-app.route('/leistungen/badmoebel', badmoebelRoute)
-app.route('/leistungen/ladenbau', ladenbauRoute)
-app.route('/leistungen/gastronomie', gastronomieRoute)
-app.route('/leistungen/buero', bueroRoute)
-app.route('/leistungen/outdoor', outdoorRoute)
 
 // Mount admin routes
 app.route('/admin', adminDashboardRoute)
