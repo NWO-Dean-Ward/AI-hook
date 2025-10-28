@@ -9,6 +9,7 @@ import { leistungenRoute } from './routes/leistungen'
 import { projekteRoute } from './routes/projekte'
 import { manufakturRoute } from './routes/manufaktur'
 import { kontaktRoute } from './routes/kontakt'
+import { downloadsRoute } from './routes/downloads'
 import { apiRoute } from './routes/api'
 
 const app = new Hono()
@@ -30,6 +31,7 @@ app.route('/leistungen', leistungenRoute)
 app.route('/projekte', projekteRoute)
 app.route('/manufaktur', manufakturRoute)
 app.route('/kontakt', kontaktRoute)
+app.route('/downloads', downloadsRoute)
 app.route('/api', apiRoute)
 
 // 404 handler

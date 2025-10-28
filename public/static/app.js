@@ -52,7 +52,14 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       
       const formData = new FormData(contactForm);
-      const data = Object.fromEntries(formData);
+      const data = {
+        name: formData.get('firstname') + ' ' + formData.get('lastname'),
+        email: formData.get('email'),
+        phone: formData.get('phone') || '',
+        subject: formData.get('subject'),
+        message: formData.get('message'),
+        type: formData.get('type')
+      };
       
       try {
         const response = await fetch('/api/contact', {
@@ -65,8 +72,15 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const result = await response.json();
         if (result.success) {
-          alert(result.message);
+          // Show success message
+          const successDiv = document.createElement('div');
+          successDiv.className = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4';
+          successDiv.innerHTML = '<i class="fas fa-check-circle mr-2"></i>' + result.message;
+          contactForm.parentNode.insertBefore(successDiv, contactForm);
           contactForm.reset();
+          
+          // Remove success message after 5 seconds
+          setTimeout(() => successDiv.remove(), 5000);
         }
       } catch (error) {
         console.error('Error submitting form:', error);
