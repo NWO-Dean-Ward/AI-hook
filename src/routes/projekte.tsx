@@ -116,7 +116,7 @@ projekteRoute.get('/', (c) => {
           <div class="flex flex-wrap gap-4 items-center justify-center">
             <div class="flex items-center gap-2">
               <label class="text-sm font-medium text-gray-700">{t('projects.filter.category')}:</label>
-              <select id="categoryFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent">
+              <select id="categoryFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent">
                 <option value="all">{t('projects.filter.all')}</option>
                 <option value="kuechen">{t('service.kitchen')}</option>
                 <option value="badmoebel">{t('service.bathroom')}</option>
@@ -129,7 +129,7 @@ projekteRoute.get('/', (c) => {
 
             <div class="flex items-center gap-2">
               <label class="text-sm font-medium text-gray-700">{t('projects.filter.year')}:</label>
-              <select id="yearFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent">
+              <select id="yearFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent">
                 <option value="all">{t('projects.filter.all')}</option>
                 <option value="2023">2023</option>
                 <option value="2022">2022</option>
@@ -139,7 +139,7 @@ projekteRoute.get('/', (c) => {
 
             <div class="flex items-center gap-2">
               <label class="text-sm font-medium text-gray-700">{t('projects.filter.client')}:</label>
-              <select id="clientFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent">
+              <select id="clientFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent">
                 <option value="all">{t('projects.filter.all')}</option>
                 <option value="privat">{lang === 'en' ? 'Private' : 'Privat'}</option>
                 <option value="b2b">Business</option>

@@ -9,7 +9,7 @@ export function LanguageSwitcher({ currentLang, switchUrl }: LanguageSwitcherPro
   return (
     <>
       <div class="relative group">
-        <button class="flex items-center space-x-2 text-gray-700 hover:text-brand-brass transition-colors">
+        <button class="flex items-center space-x-2 text-gray-700 hover:text-gray-700 transition-colors">
           <i class="fas fa-globe"></i>
           <span class="uppercase text-sm font-medium">{currentLang}</span>
           <i class="fas fa-chevron-down text-xs"></i>
@@ -23,7 +23,7 @@ export function LanguageSwitcher({ currentLang, switchUrl }: LanguageSwitcherPro
           >
             <span class="w-6 h-4 mr-3 bg-gradient-to-b from-black via-red-600 to-yellow-400"></span>
             <span>Deutsch</span>
-            {currentLang === 'de' && <i class="fas fa-check ml-auto text-brand-brass"></i>}
+            {currentLang === 'de' && <i class="fas fa-check ml-auto text-gray-700"></i>}
           </a>
           
           <a 
@@ -33,7 +33,7 @@ export function LanguageSwitcher({ currentLang, switchUrl }: LanguageSwitcherPro
           >
             <span class="w-6 h-4 mr-3 bg-gradient-to-b from-blue-700 via-white to-red-600"></span>
             <span>English</span>
-            {currentLang === 'en' && <i class="fas fa-check ml-auto text-brand-brass"></i>}
+            {currentLang === 'en' && <i class="fas fa-check ml-auto text-gray-700"></i>}
           </a>
         </div>
       </div>

@@ -22,15 +22,15 @@ ueberUnsRoute.get('/', (c) => {
           </p>
           <div class="flex gap-8 justify-center">
             <div class="text-center">
-              <div class="text-4xl font-bold text-brand-brass">15+</div>
+              <div class="text-4xl font-bold text-gray-700">15+</div>
               <div class="text-sm uppercase tracking-wider">Jahre Erfahrung</div>
             </div>
             <div class="text-center">
-              <div class="text-4xl font-bold text-brand-brass">2.500+</div>
+              <div class="text-4xl font-bold text-gray-700">2.500+</div>
               <div class="text-sm uppercase tracking-wider">Projekte</div>
             </div>
             <div class="text-center">
-              <div class="text-4xl font-bold text-brand-brass">45</div>
+              <div class="text-4xl font-bold text-gray-700">45</div>
               <div class="text-sm uppercase tracking-wider">Mitarbeiter</div>
             </div>
           </div>
@@ -75,7 +75,7 @@ ueberUnsRoute.get('/', (c) => {
             </div>
             <div class="relative">
               <img src="/api/placeholder/600/400" alt="Michael Brandstifter in der Werkstatt" class="rounded-lg shadow-xl" />
-              <div class="absolute -bottom-6 -right-6 bg-brand-brass text-white p-6 rounded-lg">
+              <div class="absolute -bottom-6 -right-6 bg-black text-white p-6 rounded-lg">
                 <blockquote class="italic">
                   "Jeder Raum erzählt eine Geschichte. Wir helfen Ihnen, Ihre zu schreiben."
                 </blockquote>
@@ -95,7 +95,7 @@ ueberUnsRoute.get('/', (c) => {
           
           <div class="relative">
             {/* Timeline Line */}
-            <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-brand-brass hidden md:block"></div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-black hidden md:block"></div>
             
             <div class="space-y-12">
               {/* 2008 */}
@@ -107,7 +107,7 @@ ueberUnsRoute.get('/', (c) => {
                     Start in kleiner Werkstatt in Ober-Mörlen. Erste Projekte für private Bauherren.
                   </p>
                 </div>
-                <div class="hidden md:block w-4 h-4 bg-brand-brass rounded-full relative z-10"></div>
+                <div class="hidden md:block w-4 h-4 bg-black rounded-full relative z-10"></div>
                 <div class="md:w-1/2 md:pl-12">
                   <img src="/api/placeholder/400/250" alt="2008 Gründung" class="rounded-lg shadow-lg" />
                 </div>
@@ -122,7 +122,7 @@ ueberUnsRoute.get('/', (c) => {
                     Ausstattung der ersten Restaurants und Hotels. Team wächst auf 8 Mitarbeiter.
                   </p>
                 </div>
-                <div class="hidden md:block w-4 h-4 bg-brand-brass rounded-full relative z-10"></div>
+                <div class="hidden md:block w-4 h-4 bg-black rounded-full relative z-10"></div>
                 <div class="md:w-1/2 md:pr-12">
                   <img src="/api/placeholder/400/250" alt="2010 Wachstum" class="rounded-lg shadow-lg" />
                 </div>
@@ -137,7 +137,7 @@ ueberUnsRoute.get('/', (c) => {
                     Umzug in 3.500m² Produktionsstätte mit Showroom. Investition in modernste CNC-Technik.
                   </p>
                 </div>
-                <div class="hidden md:block w-4 h-4 bg-brand-brass rounded-full relative z-10"></div>
+                <div class="hidden md:block w-4 h-4 bg-black rounded-full relative z-10"></div>
                 <div class="md:w-1/2 md:pl-12">
                   <img src="/api/placeholder/400/250" alt="2015 Neue Manufaktur" class="rounded-lg shadow-lg" />
                 </div>
@@ -152,7 +152,7 @@ ueberUnsRoute.get('/', (c) => {
                     Projekte in ganz Deutschland. Partnerschaften mit renommierten Architekten und Designern.
                   </p>
                 </div>
-                <div class="hidden md:block w-4 h-4 bg-brand-brass rounded-full relative z-10"></div>
+                <div class="hidden md:block w-4 h-4 bg-black rounded-full relative z-10"></div>
                 <div class="md:w-1/2 md:pr-12">
                   <img src="/api/placeholder/400/250" alt="2018 Expansion" class="rounded-lg shadow-lg" />
                 </div>
@@ -167,7 +167,7 @@ ueberUnsRoute.get('/', (c) => {
                     Zertifizierung als klimaneutraler Betrieb. Fokus auf nachhaltige Materialien und Kreislaufwirtschaft.
                   </p>
                 </div>
-                <div class="hidden md:block w-4 h-4 bg-brand-brass rounded-full relative z-10"></div>
+                <div class="hidden md:block w-4 h-4 bg-black rounded-full relative z-10"></div>
                 <div class="md:w-1/2 md:pl-12">
                   <img src="/api/placeholder/400/250" alt="2023 Nachhaltigkeit" class="rounded-lg shadow-lg" />
                 </div>
@@ -193,12 +193,12 @@ ueberUnsRoute.get('/', (c) => {
             <div class="text-center">
               <div class="relative mb-6 inline-block">
                 <img src="/api/placeholder/300/300" alt="Michael Brandstifter" class="rounded-full w-48 h-48 mx-auto object-cover" />
-                <div class="absolute -bottom-2 -right-2 bg-brand-brass text-white rounded-full w-12 h-12 flex items-center justify-center">
+                <div class="absolute -bottom-2 -right-2 bg-black text-white rounded-full w-12 h-12 flex items-center justify-center">
                   <i class="fab fa-linkedin"></i>
                 </div>
               </div>
               <h4 class="text-xl font-bold mb-1">Michael Brandstifter</h4>
-              <p class="text-brand-brass font-semibold mb-3">Gründer & Geschäftsführer</p>
+              <p class="text-gray-700 font-semibold mb-3">Gründer & Geschäftsführer</p>
               <p class="text-gray-600 text-sm">
                 Schreinermeister mit Leidenschaft für außergewöhnliche Projekte. 
                 25 Jahre Erfahrung in Premium-Innenausbau.
@@ -208,12 +208,12 @@ ueberUnsRoute.get('/', (c) => {
             <div class="text-center">
               <div class="relative mb-6 inline-block">
                 <img src="/api/placeholder/300/300" alt="Sarah Weber" class="rounded-full w-48 h-48 mx-auto object-cover" />
-                <div class="absolute -bottom-2 -right-2 bg-brand-brass text-white rounded-full w-12 h-12 flex items-center justify-center">
+                <div class="absolute -bottom-2 -right-2 bg-black text-white rounded-full w-12 h-12 flex items-center justify-center">
                   <i class="fab fa-linkedin"></i>
                 </div>
               </div>
               <h4 class="text-xl font-bold mb-1">Sarah Weber</h4>
-              <p class="text-brand-brass font-semibold mb-3">Creative Director</p>
+              <p class="text-gray-700 font-semibold mb-3">Creative Director</p>
               <p class="text-gray-600 text-sm">
                 Diplom-Designerin mit Fokus auf nachhaltige Raumkonzepte. 
                 Gewinnerin mehrerer Design-Awards.
@@ -223,12 +223,12 @@ ueberUnsRoute.get('/', (c) => {
             <div class="text-center">
               <div class="relative mb-6 inline-block">
                 <img src="/api/placeholder/300/300" alt="Thomas Klein" class="rounded-full w-48 h-48 mx-auto object-cover" />
-                <div class="absolute -bottom-2 -right-2 bg-brand-brass text-white rounded-full w-12 h-12 flex items-center justify-center">
+                <div class="absolute -bottom-2 -right-2 bg-black text-white rounded-full w-12 h-12 flex items-center justify-center">
                   <i class="fab fa-linkedin"></i>
                 </div>
               </div>
               <h4 class="text-xl font-bold mb-1">Thomas Klein</h4>
-              <p class="text-brand-brass font-semibold mb-3">Technischer Leiter</p>
+              <p class="text-gray-700 font-semibold mb-3">Technischer Leiter</p>
               <p class="text-gray-600 text-sm">
                 Ingenieur für Holztechnik. Verantwortlich für Produktion und 
                 Implementierung modernster Fertigungstechnologien.
@@ -240,28 +240,28 @@ ueberUnsRoute.get('/', (c) => {
           <h3 class="text-2xl font-bold mb-8 text-center">Unsere Abteilungen</h3>
           <div class="grid md:grid-cols-4 gap-6">
             <div class="bg-gray-50 p-6 rounded-lg text-center">
-              <i class="fas fa-pencil-ruler text-4xl text-brand-brass mb-4"></i>
+              <i class="fas fa-pencil-ruler text-4xl text-gray-700 mb-4"></i>
               <h4 class="font-bold mb-2">Design & Planung</h4>
               <p class="text-3xl font-bold text-brand-anthrazit mb-2">8</p>
               <p class="text-sm text-gray-600">Designer & Architekten</p>
             </div>
 
             <div class="bg-gray-50 p-6 rounded-lg text-center">
-              <i class="fas fa-hammer text-4xl text-brand-brass mb-4"></i>
+              <i class="fas fa-hammer text-4xl text-gray-700 mb-4"></i>
               <h4 class="font-bold mb-2">Produktion</h4>
               <p class="text-3xl font-bold text-brand-anthrazit mb-2">22</p>
               <p class="text-sm text-gray-600">Schreiner & Techniker</p>
             </div>
 
             <div class="bg-gray-50 p-6 rounded-lg text-center">
-              <i class="fas fa-truck text-4xl text-brand-brass mb-4"></i>
+              <i class="fas fa-truck text-4xl text-gray-700 mb-4"></i>
               <h4 class="font-bold mb-2">Montage</h4>
               <p class="text-3xl font-bold text-brand-anthrazit mb-2">10</p>
               <p class="text-sm text-gray-600">Monteure & Logistik</p>
             </div>
 
             <div class="bg-gray-50 p-6 rounded-lg text-center">
-              <i class="fas fa-headset text-4xl text-brand-brass mb-4"></i>
+              <i class="fas fa-headset text-4xl text-gray-700 mb-4"></i>
               <h4 class="font-bold mb-2">Service</h4>
               <p class="text-3xl font-bold text-brand-anthrazit mb-2">5</p>
               <p class="text-sm text-gray-600">Projektmanager & Support</p>
@@ -282,7 +282,7 @@ ueberUnsRoute.get('/', (c) => {
 
           <div class="grid md:grid-cols-3 gap-8">
             <div class="text-center">
-              <div class="w-24 h-24 bg-brand-brass rounded-full flex items-center justify-center mx-auto mb-6">
+              <div class="w-24 h-24 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
                 <i class="fas fa-gem text-4xl"></i>
               </div>
               <h3 class="text-2xl font-bold mb-4">Qualität</h3>
@@ -293,7 +293,7 @@ ueberUnsRoute.get('/', (c) => {
             </div>
 
             <div class="text-center">
-              <div class="w-24 h-24 bg-brand-brass rounded-full flex items-center justify-center mx-auto mb-6">
+              <div class="w-24 h-24 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
                 <i class="fas fa-lightbulb text-4xl"></i>
               </div>
               <h3 class="text-2xl font-bold mb-4">Innovation</h3>
@@ -304,7 +304,7 @@ ueberUnsRoute.get('/', (c) => {
             </div>
 
             <div class="text-center">
-              <div class="w-24 h-24 bg-brand-brass rounded-full flex items-center justify-center mx-auto mb-6">
+              <div class="w-24 h-24 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
                 <i class="fas fa-leaf text-4xl"></i>
               </div>
               <h3 class="text-2xl font-bold mb-4">Nachhaltigkeit</h3>
@@ -317,7 +317,7 @@ ueberUnsRoute.get('/', (c) => {
 
           <div class="grid md:grid-cols-3 gap-8 mt-12">
             <div class="text-center">
-              <div class="w-24 h-24 bg-brand-oak rounded-full flex items-center justify-center mx-auto mb-6">
+              <div class="w-24 h-24 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
                 <i class="fas fa-handshake text-4xl"></i>
               </div>
               <h3 class="text-2xl font-bold mb-4">Vertrauen</h3>
@@ -328,7 +328,7 @@ ueberUnsRoute.get('/', (c) => {
             </div>
 
             <div class="text-center">
-              <div class="w-24 h-24 bg-brand-oak rounded-full flex items-center justify-center mx-auto mb-6">
+              <div class="w-24 h-24 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
                 <i class="fas fa-users text-4xl"></i>
               </div>
               <h3 class="text-2xl font-bold mb-4">Teamwork</h3>
@@ -339,7 +339,7 @@ ueberUnsRoute.get('/', (c) => {
             </div>
 
             <div class="text-center">
-              <div class="w-24 h-24 bg-brand-oak rounded-full flex items-center justify-center mx-auto mb-6">
+              <div class="w-24 h-24 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6">
                 <i class="fas fa-heart text-4xl"></i>
               </div>
               <h3 class="text-2xl font-bold mb-4">Leidenschaft</h3>
@@ -362,7 +362,7 @@ ueberUnsRoute.get('/', (c) => {
 
           <div class="grid md:grid-cols-4 gap-8">
             <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-              <i class="fas fa-award text-5xl text-brand-brass mb-4"></i>
+              <i class="fas fa-award text-5xl text-gray-700 mb-4"></i>
               <h4 class="font-bold mb-2">German Design Award</h4>
               <p class="text-sm text-gray-600">2022 Winner</p>
             </div>
@@ -459,7 +459,7 @@ ueberUnsRoute.get('/', (c) => {
                 </div>
               </div>
               <div class="text-center">
-                <a href="/kontakt" class="bg-brand-brass text-white px-8 py-4 rounded-lg font-semibold hover:bg-brand-oak transition-colors inline-block">
+                <a href="/kontakt" class="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-900 transition-colors inline-block">
                   <i class="fas fa-calendar-alt mr-2"></i>
                   Termin vereinbaren
                 </a>
@@ -501,7 +501,7 @@ ueberUnsRoute.get('/', (c) => {
       </section>
 
       {/* CTA Section */}
-      <section class="py-20 bg-gradient-to-r from-brand-brass to-brand-oak text-white">
+      <section class="py-20 bg-gradient-to-r from-gray-800 to-black text-white">
         <div class="max-w-4xl mx-auto px-4 text-center">
           <h2 class="font-display text-4xl mb-6">
             Werden Sie Teil unserer Erfolgsgeschichte

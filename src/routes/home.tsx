@@ -170,7 +170,7 @@ homeRoute.get('/', (c) => {
           
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="text-center">
-              <div class="w-20 h-20 bg-brand-brass rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+              <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
                 1
               </div>
               <h3 class="font-semibold text-xl mb-2">{t('services.process.consultation')}</h3>
@@ -180,7 +180,7 @@ homeRoute.get('/', (c) => {
             </div>
             
             <div class="text-center">
-              <div class="w-20 h-20 bg-brand-brass rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+              <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
                 2
               </div>
               <h3 class="font-semibold text-xl mb-2">{t('services.process.concept')}</h3>
@@ -190,7 +190,7 @@ homeRoute.get('/', (c) => {
             </div>
             
             <div class="text-center">
-              <div class="w-20 h-20 bg-brand-brass rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+              <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
                 3
               </div>
               <h3 class="font-semibold text-xl mb-2">{t('services.process.production')}</h3>
@@ -200,7 +200,7 @@ homeRoute.get('/', (c) => {
             </div>
             
             <div class="text-center">
-              <div class="w-20 h-20 bg-brand-brass rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+              <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
                 4
               </div>
               <h3 class="font-semibold text-xl mb-2">{t('services.process.installation')}</h3>

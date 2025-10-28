@@ -92,7 +92,7 @@ leistungenRoute.get('/', (c) => {
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => (
               <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div class="bg-gradient-to-r from-brand-brass to-brand-oak p-6 text-white">
+                <div class="bg-gradient-to-r from-gray-800 to-black p-6 text-white">
                   <i class={`fas ${service.icon} text-4xl mb-4`}></i>
                   <h2 class="text-2xl font-bold mb-2">{service.title}</h2>
                   <p class="text-sm opacity-90">{service.subtitle}</p>
@@ -108,7 +108,7 @@ leistungenRoute.get('/', (c) => {
                     <ul class="space-y-2">
                       {service.features.map((feature) => (
                         <li class="flex items-start text-sm text-gray-600">
-                          <i class="fas fa-check text-brand-brass mr-2 mt-0.5"></i>
+                          <i class="fas fa-check text-gray-700 mr-2 mt-0.5"></i>
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -146,7 +146,7 @@ leistungenRoute.get('/', (c) => {
           
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="text-center">
-              <div class="w-20 h-20 bg-brand-brass rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+              <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
                 1
               </div>
               <h3 class="font-semibold text-xl mb-2">Erstberatung</h3>
@@ -156,7 +156,7 @@ leistungenRoute.get('/', (c) => {
             </div>
             
             <div class="text-center">
-              <div class="w-20 h-20 bg-brand-brass rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+              <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
                 2
               </div>
               <h3 class="font-semibold text-xl mb-2">Konzeption</h3>
@@ -166,7 +166,7 @@ leistungenRoute.get('/', (c) => {
             </div>
             
             <div class="text-center">
-              <div class="w-20 h-20 bg-brand-brass rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+              <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
                 3
               </div>
               <h3 class="font-semibold text-xl mb-2">Detailplanung</h3>
@@ -176,7 +176,7 @@ leistungenRoute.get('/', (c) => {
             </div>
             
             <div class="text-center">
-              <div class="w-20 h-20 bg-brand-brass rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+              <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
                 4
               </div>
               <h3 class="font-semibold text-xl mb-2">Produktion</h3>
@@ -186,7 +186,7 @@ leistungenRoute.get('/', (c) => {
             </div>
             
             <div class="text-center">
-              <div class="w-20 h-20 bg-brand-brass rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+              <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
                 5
               </div>
               <h3 class="font-semibold text-xl mb-2">Montage</h3>
@@ -196,7 +196,7 @@ leistungenRoute.get('/', (c) => {
             </div>
             
             <div class="text-center">
-              <div class="w-20 h-20 bg-brand-brass rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+              <div class="w-20 h-20 bg-black rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
                 6
               </div>
               <h3 class="font-semibold text-xl mb-2">Service</h3>
@@ -217,7 +217,7 @@ leistungenRoute.get('/', (c) => {
           
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="text-center">
-              <i class="fas fa-award text-4xl text-brand-brass mb-4"></i>
+              <i class="fas fa-award text-4xl text-gray-700 mb-4"></i>
               <h3 class="font-semibold text-lg mb-2">25 Jahre Expertise</h3>
               <p class="text-gray-600 text-sm">
                 Erfahrung aus über 500 erfolgreich realisierten Projekten.
@@ -225,7 +225,7 @@ leistungenRoute.get('/', (c) => {
             </div>
             
             <div class="text-center">
-              <i class="fas fa-handshake text-4xl text-brand-brass mb-4"></i>
+              <i class="fas fa-handshake text-4xl text-gray-700 mb-4"></i>
               <h3 class="font-semibold text-lg mb-2">Alles aus einer Hand</h3>
               <p class="text-gray-600 text-sm">
                 Von der Planung bis zur Montage – ein Ansprechpartner.
@@ -233,7 +233,7 @@ leistungenRoute.get('/', (c) => {
             </div>
             
             <div class="text-center">
-              <i class="fas fa-leaf text-4xl text-brand-brass mb-4"></i>
+              <i class="fas fa-leaf text-4xl text-gray-700 mb-4"></i>
               <h3 class="font-semibold text-lg mb-2">Nachhaltig</h3>
               <p class="text-gray-600 text-sm">
                 Regionale Produktion mit nachhaltigen Materialien.
@@ -241,7 +241,7 @@ leistungenRoute.get('/', (c) => {
             </div>
             
             <div class="text-center">
-              <i class="fas fa-shield-alt text-4xl text-brand-brass mb-4"></i>
+              <i class="fas fa-shield-alt text-4xl text-gray-700 mb-4"></i>
               <h3 class="font-semibold text-lg mb-2">Garantie & Service</h3>
               <p class="text-gray-600 text-sm">
                 5 Jahre Garantie und lebenslanger Service.
@@ -252,7 +252,7 @@ leistungenRoute.get('/', (c) => {
       </section>
 
       {/* CTA Section */}
-      <section class="py-16 bg-gradient-to-r from-brand-brass to-brand-oak text-white">
+      <section class="py-16 bg-gradient-to-r from-gray-800 to-black text-white">
         <div class="container mx-auto px-4 text-center">
           <h2 class="text-4xl font-display mb-6">
             Lassen Sie uns Ihr Projekt besprechen
@@ -315,19 +315,19 @@ leistungenRoute.get('/kuechen', (c) => {
               
               <div class="grid grid-cols-2 gap-6">
                 <div>
-                  <div class="text-3xl font-bold text-brand-brass mb-2">150+</div>
+                  <div class="text-3xl font-bold text-gray-700 mb-2">150+</div>
                   <div class="text-gray-600">Küchen pro Jahr</div>
                 </div>
                 <div>
-                  <div class="text-3xl font-bold text-brand-brass mb-2">98%</div>
+                  <div class="text-3xl font-bold text-gray-700 mb-2">98%</div>
                   <div class="text-gray-600">Kundenzufriedenheit</div>
                 </div>
                 <div>
-                  <div class="text-3xl font-bold text-brand-brass mb-2">5</div>
+                  <div class="text-3xl font-bold text-gray-700 mb-2">5</div>
                   <div class="text-gray-600">Jahre Garantie</div>
                 </div>
                 <div>
-                  <div class="text-3xl font-bold text-brand-brass mb-2">∞</div>
+                  <div class="text-3xl font-bold text-gray-700 mb-2">∞</div>
                   <div class="text-gray-600">Gestaltungsmöglichkeiten</div>
                 </div>
               </div>
@@ -421,7 +421,7 @@ leistungenRoute.get('/kuechen', (c) => {
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
               <h3 class="font-semibold text-lg mb-4 text-brand-anthrazit">
-                <i class="fas fa-cube mr-2 text-brand-brass"></i>
+                <i class="fas fa-cube mr-2 text-gray-700"></i>
                 Materialien
               </h3>
               <ul class="space-y-2 text-gray-600">
@@ -435,7 +435,7 @@ leistungenRoute.get('/kuechen', (c) => {
             
             <div>
               <h3 class="font-semibold text-lg mb-4 text-brand-anthrazit">
-                <i class="fas fa-cogs mr-2 text-brand-brass"></i>
+                <i class="fas fa-cogs mr-2 text-gray-700"></i>
                 Technik
               </h3>
               <ul class="space-y-2 text-gray-600">
@@ -449,7 +449,7 @@ leistungenRoute.get('/kuechen', (c) => {
             
             <div>
               <h3 class="font-semibold text-lg mb-4 text-brand-anthrazit">
-                <i class="fas fa-blender mr-2 text-brand-brass"></i>
+                <i class="fas fa-blender mr-2 text-gray-700"></i>
                 Geräte
               </h3>
               <ul class="space-y-2 text-gray-600">
@@ -463,7 +463,7 @@ leistungenRoute.get('/kuechen', (c) => {
             
             <div>
               <h3 class="font-semibold text-lg mb-4 text-brand-anthrazit">
-                <i class="fas fa-magic mr-2 text-brand-brass"></i>
+                <i class="fas fa-magic mr-2 text-gray-700"></i>
                 Extras
               </h3>
               <ul class="space-y-2 text-gray-600">
@@ -488,7 +488,7 @@ leistungenRoute.get('/kuechen', (c) => {
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="bg-white rounded-lg shadow-lg p-8">
               <h3 class="text-xl font-bold mb-2">Starter</h3>
-              <div class="text-3xl font-bold text-brand-brass mb-4">ab 25.000 €</div>
+              <div class="text-3xl font-bold text-gray-700 mb-4">ab 25.000 €</div>
               <ul class="space-y-2 text-gray-600 mb-6">
                 <li class="flex items-start">
                   <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
@@ -510,11 +510,11 @@ leistungenRoute.get('/kuechen', (c) => {
             </div>
             
             <div class="bg-white rounded-lg shadow-lg p-8 relative">
-              <div class="absolute -top-4 right-4 bg-brand-brass text-white px-3 py-1 rounded-full text-sm">
+              <div class="absolute -top-4 right-4 bg-black text-white px-3 py-1 rounded-full text-sm">
                 Beliebt
               </div>
               <h3 class="text-xl font-bold mb-2">Premium</h3>
-              <div class="text-3xl font-bold text-brand-brass mb-4">ab 50.000 €</div>
+              <div class="text-3xl font-bold text-gray-700 mb-4">ab 50.000 €</div>
               <ul class="space-y-2 text-gray-600 mb-6">
                 <li class="flex items-start">
                   <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
@@ -537,7 +537,7 @@ leistungenRoute.get('/kuechen', (c) => {
             
             <div class="bg-white rounded-lg shadow-lg p-8">
               <h3 class="text-xl font-bold mb-2">Luxury</h3>
-              <div class="text-3xl font-bold text-brand-brass mb-4">ab 100.000 €</div>
+              <div class="text-3xl font-bold text-gray-700 mb-4">ab 100.000 €</div>
               <ul class="space-y-2 text-gray-600 mb-6">
                 <li class="flex items-start">
                   <i class="fas fa-check text-green-500 mr-2 mt-1"></i>

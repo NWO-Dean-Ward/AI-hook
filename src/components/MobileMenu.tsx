@@ -25,86 +25,86 @@ export const MobileMenu = () => (
             {/* Main Links */}
             <ul class="space-y-4">
               <li>
-                <a href="/" class="block text-lg font-medium text-gray-800 hover:text-brand-brass transition">
-                  <i class="fas fa-home mr-3 text-brand-brass w-5"></i>
+                <a href="/" class="block text-lg font-medium text-gray-800 hover:text-gray-700 transition">
+                  <i class="fas fa-home mr-3 text-gray-700 w-5"></i>
                   Home
                 </a>
               </li>
               
               {/* Leistungen with Submenu */}
               <li>
-                <button class="mobile-submenu-toggle w-full text-left text-lg font-medium text-gray-800 hover:text-brand-brass transition flex items-center justify-between" data-submenu="leistungen">
+                <button class="mobile-submenu-toggle w-full text-left text-lg font-medium text-gray-800 hover:text-gray-700 transition flex items-center justify-between" data-submenu="leistungen">
                   <span>
-                    <i class="fas fa-tools mr-3 text-brand-brass w-5"></i>
+                    <i class="fas fa-tools mr-3 text-gray-700 w-5"></i>
                     Leistungen
                   </span>
                   <i class="fas fa-chevron-down text-xs"></i>
                 </button>
                 <ul id="submenu-leistungen" class="hidden mt-3 ml-8 space-y-2">
-                  <li><a href="/leistungen/kuechen" class="block py-2 text-gray-600 hover:text-brand-brass">Küchen & Wohnkonzepte</a></li>
-                  <li><a href="/leistungen/badmoebel" class="block py-2 text-gray-600 hover:text-brand-brass">Badmöbel & Wellness</a></li>
-                  <li><a href="/leistungen/ladenbau" class="block py-2 text-gray-600 hover:text-brand-brass">Ladenbau & Retail</a></li>
-                  <li><a href="/leistungen/gastronomie" class="block py-2 text-gray-600 hover:text-brand-brass">Gastronomie & Hospitality</a></li>
-                  <li><a href="/leistungen/buero" class="block py-2 text-gray-600 hover:text-brand-brass">Büro & Workspaces</a></li>
-                  <li><a href="/leistungen/outdoor" class="block py-2 text-gray-600 hover:text-brand-brass">Outdoor</a></li>
+                  <li><a href="/leistungen/kuechen" class="block py-2 text-gray-600 hover:text-gray-700">Küchen & Wohnkonzepte</a></li>
+                  <li><a href="/leistungen/badmoebel" class="block py-2 text-gray-600 hover:text-gray-700">Badmöbel & Wellness</a></li>
+                  <li><a href="/leistungen/ladenbau" class="block py-2 text-gray-600 hover:text-gray-700">Ladenbau & Retail</a></li>
+                  <li><a href="/leistungen/gastronomie" class="block py-2 text-gray-600 hover:text-gray-700">Gastronomie & Hospitality</a></li>
+                  <li><a href="/leistungen/buero" class="block py-2 text-gray-600 hover:text-gray-700">Büro & Workspaces</a></li>
+                  <li><a href="/leistungen/outdoor" class="block py-2 text-gray-600 hover:text-gray-700">Outdoor</a></li>
                 </ul>
               </li>
               
               <li>
-                <a href="/projekte" class="block text-lg font-medium text-gray-800 hover:text-brand-brass transition">
-                  <i class="fas fa-images mr-3 text-brand-brass w-5"></i>
+                <a href="/projekte" class="block text-lg font-medium text-gray-800 hover:text-gray-700 transition">
+                  <i class="fas fa-images mr-3 text-gray-700 w-5"></i>
                   Projekte
                 </a>
               </li>
               
               <li>
-                <a href="/manufaktur" class="block text-lg font-medium text-gray-800 hover:text-brand-brass transition">
-                  <i class="fas fa-industry mr-3 text-brand-brass w-5"></i>
+                <a href="/manufaktur" class="block text-lg font-medium text-gray-800 hover:text-gray-700 transition">
+                  <i class="fas fa-industry mr-3 text-gray-700 w-5"></i>
                   Manufaktur
                 </a>
               </li>
               
               <li>
-                <a href="/ueber-uns" class="block text-lg font-medium text-gray-800 hover:text-brand-brass transition">
-                  <i class="fas fa-info-circle mr-3 text-brand-brass w-5"></i>
+                <a href="/ueber-uns" class="block text-lg font-medium text-gray-800 hover:text-gray-700 transition">
+                  <i class="fas fa-info-circle mr-3 text-gray-700 w-5"></i>
                   Über Uns
                 </a>
               </li>
               
               {/* Für Sie with Submenu */}
               <li>
-                <button class="mobile-submenu-toggle w-full text-left text-lg font-medium text-gray-800 hover:text-brand-brass transition flex items-center justify-between" data-submenu="fuer-sie">
+                <button class="mobile-submenu-toggle w-full text-left text-lg font-medium text-gray-800 hover:text-gray-700 transition flex items-center justify-between" data-submenu="fuer-sie">
                   <span>
-                    <i class="fas fa-users mr-3 text-brand-brass w-5"></i>
+                    <i class="fas fa-users mr-3 text-gray-700 w-5"></i>
                     Für Sie
                   </span>
                   <i class="fas fa-chevron-down text-xs"></i>
                 </button>
                 <ul id="submenu-fuer-sie" class="hidden mt-3 ml-8 space-y-2">
-                  <li><a href="/privatkunden" class="block py-2 text-gray-600 hover:text-brand-brass">Privatkunden & Bauherren</a></li>
-                  <li><a href="/architekten" class="block py-2 text-gray-600 hover:text-brand-brass">Architekten & Planer</a></li>
-                  <li><a href="/generalunternehmer" class="block py-2 text-gray-600 hover:text-brand-brass">Generalunternehmer</a></li>
-                  <li><a href="/b2b" class="block py-2 text-gray-600 hover:text-brand-brass">Business & Corporate</a></li>
+                  <li><a href="/privatkunden" class="block py-2 text-gray-600 hover:text-gray-700">Privatkunden & Bauherren</a></li>
+                  <li><a href="/architekten" class="block py-2 text-gray-600 hover:text-gray-700">Architekten & Planer</a></li>
+                  <li><a href="/generalunternehmer" class="block py-2 text-gray-600 hover:text-gray-700">Generalunternehmer</a></li>
+                  <li><a href="/b2b" class="block py-2 text-gray-600 hover:text-gray-700">Business & Corporate</a></li>
                 </ul>
               </li>
               
               <li>
-                <a href="/ueber-uns" class="block text-lg font-medium text-gray-800 hover:text-brand-brass transition">
-                  <i class="fas fa-info-circle mr-3 text-brand-brass w-5"></i>
+                <a href="/ueber-uns" class="block text-lg font-medium text-gray-800 hover:text-gray-700 transition">
+                  <i class="fas fa-info-circle mr-3 text-gray-700 w-5"></i>
                   Über uns
                 </a>
               </li>
               
               <li>
-                <a href="/downloads" class="block text-lg font-medium text-gray-800 hover:text-brand-brass transition">
-                  <i class="fas fa-download mr-3 text-brand-brass w-5"></i>
+                <a href="/downloads" class="block text-lg font-medium text-gray-800 hover:text-gray-700 transition">
+                  <i class="fas fa-download mr-3 text-gray-700 w-5"></i>
                   Downloads
                 </a>
               </li>
               
               <li>
-                <a href="/kontakt" class="block text-lg font-medium text-gray-800 hover:text-brand-brass transition">
-                  <i class="fas fa-envelope mr-3 text-brand-brass w-5"></i>
+                <a href="/kontakt" class="block text-lg font-medium text-gray-800 hover:text-gray-700 transition">
+                  <i class="fas fa-envelope mr-3 text-gray-700 w-5"></i>
                   Kontakt
                 </a>
               </li>
@@ -123,16 +123,16 @@ export const MobileMenu = () => (
             <div class="mt-8 pt-8 border-t">
               <p class="text-sm font-semibold text-gray-600 mb-4">Kontakt</p>
               <div class="space-y-3">
-                <a href="tel:+496002123456" class="flex items-center text-gray-700 hover:text-brand-brass">
-                  <i class="fas fa-phone mr-3 text-brand-brass"></i>
+                <a href="tel:+496002123456" class="flex items-center text-gray-700 hover:text-gray-700">
+                  <i class="fas fa-phone mr-3 text-gray-700"></i>
                   +49 (0) 6002 123 456
                 </a>
-                <a href="mailto:info@brandstifter.online" class="flex items-center text-gray-700 hover:text-brand-brass text-sm">
-                  <i class="fas fa-envelope mr-3 text-brand-brass"></i>
+                <a href="mailto:info@brandstifter.online" class="flex items-center text-gray-700 hover:text-gray-700 text-sm">
+                  <i class="fas fa-envelope mr-3 text-gray-700"></i>
                   info@brandstifter.online
                 </a>
-                <a href="/kontakt#showroom" class="flex items-center text-gray-700 hover:text-brand-brass">
-                  <i class="fas fa-map-marker-alt mr-3 text-brand-brass"></i>
+                <a href="/kontakt#showroom" class="flex items-center text-gray-700 hover:text-gray-700">
+                  <i class="fas fa-map-marker-alt mr-3 text-gray-700"></i>
                   Showroom Ober-Mörlen
                 </a>
               </div>
@@ -142,16 +142,16 @@ export const MobileMenu = () => (
             <div class="mt-8 pt-8 border-t">
               <p class="text-sm font-semibold text-gray-600 mb-4">Folgen Sie uns</p>
               <div class="flex space-x-4">
-                <a href="#" class="w-10 h-10 bg-brand-anthrazit text-white rounded-full flex items-center justify-center hover:bg-brand-brass transition">
+                <a href="#" class="w-10 h-10 bg-brand-anthrazit text-white rounded-full flex items-center justify-center hover:bg-black transition">
                   <i class="fab fa-instagram"></i>
                 </a>
-                <a href="#" class="w-10 h-10 bg-brand-anthrazit text-white rounded-full flex items-center justify-center hover:bg-brand-brass transition">
+                <a href="#" class="w-10 h-10 bg-brand-anthrazit text-white rounded-full flex items-center justify-center hover:bg-black transition">
                   <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="#" class="w-10 h-10 bg-brand-anthrazit text-white rounded-full flex items-center justify-center hover:bg-brand-brass transition">
+                <a href="#" class="w-10 h-10 bg-brand-anthrazit text-white rounded-full flex items-center justify-center hover:bg-black transition">
                   <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="#" class="w-10 h-10 bg-brand-anthrazit text-white rounded-full flex items-center justify-center hover:bg-brand-brass transition">
+                <a href="#" class="w-10 h-10 bg-brand-anthrazit text-white rounded-full flex items-center justify-center hover:bg-black transition">
                   <i class="fab fa-pinterest-p"></i>
                 </a>
               </div>

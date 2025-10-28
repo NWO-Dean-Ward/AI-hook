@@ -38,7 +38,7 @@ kontaktRoute.get('/', (c) => {
                       id="name"
                       name="name"
                       required
-                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent transition"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent transition"
                       placeholder={lang === 'en' ? 'Your name' : 'Ihr Name'}
                     />
                   </div>
@@ -51,7 +51,7 @@ kontaktRoute.get('/', (c) => {
                       id="email"
                       name="email"
                       required
-                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent transition"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent transition"
                       placeholder={lang === 'en' ? 'your@email.com' : 'ihre@email.de'}
                     />
                   </div>
@@ -66,7 +66,7 @@ kontaktRoute.get('/', (c) => {
                       type="tel"
                       id="phone"
                       name="phone"
-                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent transition"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent transition"
                       placeholder={lang === 'en' ? '+49 123 456789' : '+49 123 456789'}
                     />
                   </div>
@@ -78,7 +78,7 @@ kontaktRoute.get('/', (c) => {
                       type="text"
                       id="company"
                       name="company"
-                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent transition"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent transition"
                       placeholder={lang === 'en' ? 'Your company' : 'Ihre Firma'}
                     />
                   </div>
@@ -91,7 +91,7 @@ kontaktRoute.get('/', (c) => {
                   <select
                     id="project"
                     name="project"
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent transition"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent transition"
                   >
                     <option value="">{lang === 'en' ? 'Please select' : 'Bitte wählen'}</option>
                     <option value="kuechen">{t('service.kitchen')}</option>
@@ -112,7 +112,7 @@ kontaktRoute.get('/', (c) => {
                     <select
                       id="budget"
                       name="budget"
-                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent transition"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent transition"
                     >
                       <option value="">{lang === 'en' ? 'Please select' : 'Bitte wählen'}</option>
                       <option value="< 10k">{lang === 'en' ? '< €10,000' : '< 10.000 €'}</option>
@@ -129,7 +129,7 @@ kontaktRoute.get('/', (c) => {
                     <select
                       id="timeline"
                       name="timeline"
-                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent transition"
+                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent transition"
                     >
                       <option value="">{lang === 'en' ? 'Please select' : 'Bitte wählen'}</option>
                       <option value="asap">{lang === 'en' ? 'As soon as possible' : 'Schnellstmöglich'}</option>
@@ -150,7 +150,7 @@ kontaktRoute.get('/', (c) => {
                     name="message"
                     rows={6}
                     required
-                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent transition"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent transition"
                     placeholder={lang === 'en' 
                       ? 'Tell us about your project...' 
                       : 'Erzählen Sie uns von Ihrem Projekt...'}
@@ -163,7 +163,7 @@ kontaktRoute.get('/', (c) => {
                     id="privacy"
                     name="privacy"
                     required
-                    class="mt-1 h-4 w-4 text-brand-brass border-gray-300 rounded focus:ring-brand-brass"
+                    class="mt-1 h-4 w-4 text-gray-700 border-gray-300 rounded focus:ring-black"
                   />
                   <label for="privacy" class="ml-2 text-sm text-gray-600">
                     {t('contact.form.privacy')} *
@@ -172,7 +172,7 @@ kontaktRoute.get('/', (c) => {
 
                 <button
                   type="submit"
-                  class="w-full bg-brand-anthrazit text-white py-4 px-8 rounded-lg font-semibold hover:bg-brand-brass transition-colors"
+                  class="w-full bg-brand-anthrazit text-white py-4 px-8 rounded-lg font-semibold hover:bg-black transition-colors"
                 >
                   <i class="fas fa-paper-plane mr-2"></i>
                   {t('contact.form.submit')}
@@ -187,7 +187,7 @@ kontaktRoute.get('/', (c) => {
                 
                 <div class="space-y-4">
                   <div class="flex items-start">
-                    <i class="fas fa-map-marker-alt text-brand-brass mt-1 mr-4 w-5"></i>
+                    <i class="fas fa-map-marker-alt text-gray-700 mt-1 mr-4 w-5"></i>
                     <div>
                       <p class="font-semibold">{lang === 'en' ? 'Address' : 'Adresse'}</p>
                       <p class="text-gray-600">
@@ -199,20 +199,20 @@ kontaktRoute.get('/', (c) => {
                   </div>
 
                   <div class="flex items-start">
-                    <i class="fas fa-phone text-brand-brass mt-1 mr-4 w-5"></i>
+                    <i class="fas fa-phone text-gray-700 mt-1 mr-4 w-5"></i>
                     <div>
                       <p class="font-semibold">{lang === 'en' ? 'Phone' : 'Telefon'}</p>
-                      <a href="tel:+496002920490" class="text-gray-600 hover:text-brand-brass transition">
+                      <a href="tel:+496002920490" class="text-gray-600 hover:text-gray-700 transition">
                         +49 (0) 6002 920 490
                       </a>
                     </div>
                   </div>
 
                   <div class="flex items-start">
-                    <i class="fas fa-envelope text-brand-brass mt-1 mr-4 w-5"></i>
+                    <i class="fas fa-envelope text-gray-700 mt-1 mr-4 w-5"></i>
                     <div>
                       <p class="font-semibold">{lang === 'en' ? 'Email' : 'E-Mail'}</p>
-                      <a href="mailto:info@brandstifter.de" class="text-gray-600 hover:text-brand-brass transition">
+                      <a href="mailto:info@brandstifter.de" class="text-gray-600 hover:text-gray-700 transition">
                         info@brandstifter.de
                       </a>
                     </div>
@@ -238,9 +238,9 @@ kontaktRoute.get('/', (c) => {
                   </div>
                 </div>
 
-                <div class="mt-6 p-4 bg-brand-brass/10 rounded-lg">
+                <div class="mt-6 p-4 bg-gray-200 rounded-lg">
                   <p class="text-sm text-gray-700">
-                    <i class="fas fa-info-circle mr-2 text-brand-brass"></i>
+                    <i class="fas fa-info-circle mr-2 text-gray-700"></i>
                     {lang === 'en' 
                       ? 'Appointments outside opening hours available upon request.' 
                       : 'Termine außerhalb der Öffnungszeiten nach Vereinbarung möglich.'}
@@ -261,7 +261,7 @@ kontaktRoute.get('/', (c) => {
                   <a 
                     href="https://maps.google.com/?q=Am+Goldberg+2+61239+Ober-Mörlen" 
                     target="_blank"
-                    class="flex-1 bg-brand-anthrazit text-white text-center py-3 rounded-lg hover:bg-brand-brass transition-colors"
+                    class="flex-1 bg-brand-anthrazit text-white text-center py-3 rounded-lg hover:bg-black transition-colors"
                   >
                     <i class="fas fa-map-marked-alt mr-2"></i>
                     {lang === 'en' ? 'Open in Maps' : 'In Maps öffnen'}
@@ -281,7 +281,7 @@ kontaktRoute.get('/', (c) => {
       </section>
 
       {/* CTA Section */}
-      <section class="py-20 bg-gradient-to-r from-brand-brass to-brand-oak text-white">
+      <section class="py-20 bg-gradient-to-r from-gray-800 to-black text-white">
         <div class="max-w-4xl mx-auto px-4 text-center">
           <h2 class="font-display text-4xl mb-6">
             {lang === 'en' 

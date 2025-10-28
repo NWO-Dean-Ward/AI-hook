@@ -45,8 +45,8 @@ export const renderer = jsxRenderer(({ children, title, description }, c) => {
               extend: {
                 colors: {
                   'brand-anthrazit': '#2C2C2C',
-                  'brand-oak': '#8B7355',
-                  'brand-brass': '#B08D57',
+                  'brand-oak': '#1a1a1a',
+                  'brand-brass': '#000000',
                   'brand-greige': '#E8E4DF',
                 },
                 fontFamily: {

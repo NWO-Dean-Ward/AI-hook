@@ -15,7 +15,7 @@
 }
 
 .btn-secondary {
-  @apply inline-block px-6 py-3 bg-brand-brass text-white font-semibold rounded-lg hover:bg-brand-oak transition-all duration-200 transform hover:scale-105;
+  @apply inline-block px-6 py-3 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 transition-all duration-200 transform hover:scale-105;
 }
 
 .btn-secondary-large {
@@ -82,7 +82,7 @@
 
 /* Form Styles */
 .form-input {
-  @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-brass focus:border-transparent;
+  @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent;
 }
 
 .form-label {
@@ -96,7 +96,7 @@
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #2C2C2C 0%, #B08D57 100%);
+  background: linear-gradient(135deg, #2C2C2C 0%, #666666 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

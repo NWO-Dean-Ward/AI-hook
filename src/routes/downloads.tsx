@@ -111,7 +111,7 @@ downloadsRoute.get('/', (c) => {
             {downloads.map(download => (
               <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
                 <div class="flex items-start mb-4">
-                  <div class="w-12 h-12 bg-brand-brass rounded-lg flex items-center justify-center text-white mr-4">
+                  <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center text-white mr-4">
                     <i class={`fas ${download.icon}`}></i>
                   </div>
                   <div class="flex-1">
@@ -128,7 +128,7 @@ downloadsRoute.get('/', (c) => {
                 </div>
                 
                 <button 
-                  class="download-btn w-full bg-brand-anthrazit text-white py-3 rounded-lg hover:bg-brand-brass transition-colors"
+                  class="download-btn w-full bg-brand-anthrazit text-white py-3 rounded-lg hover:bg-black transition-colors"
                   data-download={download.id}
                   data-title={download.title}
                 >
@@ -146,7 +146,7 @@ downloadsRoute.get('/', (c) => {
         <div class="max-w-4xl mx-auto px-4">
           <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
             <div class="text-center mb-8">
-              <i class="fas fa-envelope text-5xl text-brand-brass mb-4"></i>
+              <i class="fas fa-envelope text-5xl text-gray-700 mb-4"></i>
               <h2 class="font-display text-3xl mb-4">
                 {lang === 'en'
                   ? 'Stay Updated'
@@ -166,11 +166,11 @@ downloadsRoute.get('/', (c) => {
                   name="email"
                   placeholder={lang === 'en' ? 'Your email address' : 'Ihre E-Mail-Adresse'}
                   required
-                  class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent"
+                  class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
                 />
                 <button
                   type="submit"
-                  class="bg-brand-brass text-white px-6 py-3 rounded-lg hover:bg-brand-oak transition-colors"
+                  class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors"
                 >
                   {t('action.subscribe')}
                 </button>
@@ -207,7 +207,7 @@ downloadsRoute.get('/', (c) => {
                   type="text"
                   name="name"
                   required
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
                 />
               </div>
               
@@ -219,7 +219,7 @@ downloadsRoute.get('/', (c) => {
                   type="email"
                   name="email"
                   required
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
                 />
               </div>
               
@@ -230,7 +230,7 @@ downloadsRoute.get('/', (c) => {
                 <input
                   type="text"
                   name="company"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-brass focus:border-transparent"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
                 />
               </div>
               
@@ -239,7 +239,7 @@ downloadsRoute.get('/', (c) => {
                   type="checkbox"
                   name="newsletter"
                   id="newsletterConsent"
-                  class="mt-1 h-4 w-4 text-brand-brass border-gray-300 rounded focus:ring-brand-brass"
+                  class="mt-1 h-4 w-4 text-gray-700 border-gray-300 rounded focus:ring-black"
                 />
                 <label for="newsletterConsent" class="ml-2 text-sm text-gray-600">
                   {lang === 'en'
@@ -253,7 +253,7 @@ downloadsRoute.get('/', (c) => {
                   type="checkbox"
                   name="privacy"
                   required
-                  class="mt-1 h-4 w-4 text-brand-brass border-gray-300 rounded focus:ring-brand-brass"
+                  class="mt-1 h-4 w-4 text-gray-700 border-gray-300 rounded focus:ring-black"
                 />
                 <label class="ml-2 text-sm text-gray-600">
                   {t('contact.form.privacy')} *
@@ -271,7 +271,7 @@ downloadsRoute.get('/', (c) => {
               </button>
               <button
                 type="submit"
-                class="flex-1 bg-brand-brass text-white py-3 rounded-lg hover:bg-brand-oak transition-colors"
+                class="flex-1 bg-black text-white py-3 rounded-lg hover:bg-gray-900 transition-colors"
               >
                 <i class="fas fa-download mr-2"></i>
                 {t('action.download')}
