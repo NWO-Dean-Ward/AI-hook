@@ -11,6 +11,7 @@ import { manufakturRoute } from './routes/manufaktur'
 import { kontaktRoute } from './routes/kontakt'
 import { downloadsRoute } from './routes/downloads'
 import { apiRoute } from './routes/api'
+import ueberUnsRoute from './routes/ueber-uns'
 
 const app = new Hono()
 
@@ -30,6 +31,7 @@ app.route('/', homeRoute)
 app.route('/leistungen', leistungenRoute)
 app.route('/projekte', projekteRoute)
 app.route('/manufaktur', manufakturRoute)
+app.route('/ueber-uns', ueberUnsRoute)
 app.route('/kontakt', kontaktRoute)
 app.route('/downloads', downloadsRoute)
 app.route('/api', apiRoute)

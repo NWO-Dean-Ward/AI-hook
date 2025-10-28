@@ -64,6 +64,13 @@ export const MobileMenu = () => (
                 </a>
               </li>
               
+              <li>
+                <a href="/ueber-uns" class="block text-lg font-medium text-gray-800 hover:text-brand-brass transition">
+                  <i class="fas fa-info-circle mr-3 text-brand-brass w-5"></i>
+                  Über Uns
+                </a>
+              </li>
+              
               {/* Für Sie with Submenu */}
               <li>
                 <button class="mobile-submenu-toggle w-full text-left text-lg font-medium text-gray-800 hover:text-brand-brass transition flex items-center justify-between" data-submenu="fuer-sie">
