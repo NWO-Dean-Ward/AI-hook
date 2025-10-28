@@ -89,6 +89,9 @@ export function SEOHead({
       <meta name="distribution" content="global" />
       <meta name="rating" content="general" />
       
+      {/* Google Site Verification */}
+      <meta name="google-site-verification" content="Lpy5t3VTG7nkYmjRm2bcD_Ry8E7yrk0NNzWjInU0QzY" />
+      
       {/* Geo Tags for Local SEO */}
       <meta name="geo.region" content="DE-HE" />
       <meta name="geo.placename" content="Ober-Mörlen" />
